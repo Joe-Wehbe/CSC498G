@@ -11,6 +11,14 @@ Joe Wehbe - <a href="https://github.com/Joe-Wehbe">View Profile</a>
 
 # App Preview
 ![activity1](https://user-images.githubusercontent.com/102875229/206588350-4c39d33a-f74b-48f3-ba35-ac31bcc0a1fb.jpg)
+![Activity2](https://user-images.githubusercontent.com/102875229/206589504-0f8e739f-ed5f-4eb6-89ad-316a1dd9407e.jpg)
+![activity3](https://user-images.githubusercontent.com/102875229/206589508-f8e26486-1366-492f-a15b-4138c8de29a5.jpg)
+![activity4](https://user-images.githubusercontent.com/102875229/206589512-46484122-65fb-4eb6-8e16-f794922e3b12.jpg)
+![activity5](https://user-images.githubusercontent.com/102875229/206589514-78a03cf7-f73e-4437-a858-dfbcb953fd0a.jpg)
+![activity6](https://user-images.githubusercontent
+![activity7](https://user-images.githubusercontent.com/102875229/206589527-da39107d-5a7f-4ba0-8ec9-136e57db3471.jpg)
+.com/102875229/206589519-92a53774-6e44-4f6c-99c1-a9f1942382a8.jpg)
+
 
 
 # Stacks :books:
