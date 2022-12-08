@@ -7,7 +7,7 @@ Mobile application that keeps track of your vehicles' fluids.
   When a new distance is driven, users will have to enter two locations, the application will calculate the distance driven, and the amount of fluids will be updated accordingly.
 
 # Contributors :raising_hand_man:
-Joe Wehbe - <a href="https://github.com/Joe-Wehbe"></a>
+Joe Wehbe - <a href="https://github.com/Joe-Wehbe">Profile</a>
 
 # Stacks :books:
 <img src="https://img.shields.io/badge/-PHP-232531?logo=php&logoColor=white&style=for-the-badge" ></img>
