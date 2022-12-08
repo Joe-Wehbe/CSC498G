@@ -9,6 +9,10 @@ Mobile application that keeps track of your vehicles' fluids.
 # Contributors :raising_hand_man:
 Joe Wehbe - <a href="https://github.com/Joe-Wehbe">View Profile</a>
 
+# App Preview
+![activity1](https://user-images.githubusercontent.com/102875229/206588350-4c39d33a-f74b-48f3-ba35-ac31bcc0a1fb.jpg)
+
+
 # Stacks :books:
 <img src="https://img.shields.io/badge/-PHP-232531?logo=php&logoColor=white&style=for-the-badge" ></img>
 <img src="https://img.shields.io/badge/-java-5382a1?logo=&logoColor=white&style=for-the-badge" ></img>
