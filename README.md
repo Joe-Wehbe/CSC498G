@@ -24,7 +24,7 @@ Joe Wehbe - <a href="https://github.com/Joe-Wehbe">View Profile</a>
 <img src="https://img.shields.io/badge/-MYSQL-00758f?logo=mysql&logoColor=white&style=for-the-badge" ></img>
 <img src="https://img.shields.io/badge/-ANDROID%20STUDIO-3DDC84?logo=android-studio&logoColor=white&style=for-the-badge" ></img>
 
-# Database: :bar_chart:
+# Database :bar_chart:
 You can download the database from the repository under the 'Database' folder.
 
 # ER Diagram :link:
