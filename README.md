@@ -15,6 +15,9 @@ Mobile application that keeps track of your vehicles' fluids.
 <img src="https://img.shields.io/badge/-MYSQL-00758f?logo=mysql&logoColor=white&style=for-the-badge" ></img>
 <img src="https://img.shields.io/badge/-ANDROID%20STUDIO-3DDC84?logo=android-studio&logoColor=white&style=for-the-badge" ></img>
 
+# Database: :bar_chart:
+You can download the database from the repository under the 'Database' folder.
+
 # ER diagram :link:
 ![ERdiagram](https://user-images.githubusercontent.com/102875229/206572830-f217c753-793f-4507-8499-9a3aae59d883.jpg)
 
