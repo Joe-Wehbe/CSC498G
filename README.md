@@ -27,7 +27,7 @@ Joe Wehbe - <a href="https://github.com/Joe-Wehbe">View Profile</a>
 # Database: :bar_chart:
 You can download the database from the repository under the 'Database' folder.
 
-# ER diagram :link:
+# ER Diagram :link:
 ![ERdiagram](https://user-images.githubusercontent.com/102875229/206572830-f217c753-793f-4507-8499-9a3aae59d883.jpg)
 
 
