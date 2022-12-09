@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".NoCarsActivity">
+
+
+    <TextView
+        android:id="@+id/you_currently_have_no_cars_"
+        android:layout_width="321dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="108dp"
+        android:text="You currently have no cars!"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/vector"
+        android:layout_width="182dp"
+        android:layout_height="177dp"
+        android:layout_marginTop="108dp"
+        android:contentDescription="vector"
+        android:src="@drawable/car_vector"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/you_currently_have_no_cars_" />
+
+
+    <ImageView
+        android:id="@+id/sign_in_button"
+        android:layout_width="310dp"
+        android:layout_height="146dp"
+        android:clickable="false"
+        android:contentDescription="sign_in_button"
+        android:src="@drawable/sign_in_button"
+        app:layout_constraintBottom_toTopOf="@+id/gradient"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vector"
+        app:layout_constraintVertical_bias="0.343" />
+
+    <TextView
+        android:id="@+id/sign_in"
+        android:layout_width="132dp"
+        android:layout_height="32dp"
+        android:text="Add your first car!"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/sign_in_button"
+        app:layout_constraintEnd_toEndOf="@+id/sign_in_button"
+        app:layout_constraintStart_toStartOf="@+id/sign_in_button"
+        app:layout_constraintTop_toTopOf="@+id/sign_in_button"
+        app:layout_constraintVertical_bias="0.517" />
+
+    <ImageView
+        android:id="@+id/gradient"
+        android:layout_width="wrap_content"
+        android:layout_height="129dp"
+        android:contentDescription="gradient"
+        android:src="@drawable/gradient"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
