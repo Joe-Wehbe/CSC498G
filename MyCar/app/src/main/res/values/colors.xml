@@ -8,10 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name = "dark_gray">#1A1A1A</color>
-
-
     <color name="background">#B1B1B1</color>
-    <color name="sign_up_color">#000000</color>
-    <color name="sign_in_color">#FFFFFF</color>
-    <color name="password_color">#595959</color>
+
 </resources>

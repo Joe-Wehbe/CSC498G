@@ -1,11 +1,4 @@
 <resources>
     <string name="app_name">MyCar</string>
-    <string name="ek_img_content">ExportKit Image</string>
-    <string name="sign_up_string"><u>Sign up</u></string>
-    <string name="don_t_have_an_account__string">Dont have an account?</string>
-    <string name="or_sign_in_with_string">Or sign in with</string>
-    <string name="sign_in_string">Sign in</string>
-    <string name="password_string">Password</string>
-    <string name="email_address_string">Email Address</string>
-    <string name="sign_into_your_account_string">Sign into your account</string>
+
 </resources>
