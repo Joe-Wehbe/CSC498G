@@ -27,11 +27,11 @@
         android:layout_height="55dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="52dp"
         android:background="@drawable/box"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/sign_into_your_account" />
 
     <EditText
         android:id="@+id/email_address"

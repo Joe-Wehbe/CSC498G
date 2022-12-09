@@ -52,12 +52,12 @@
         android:layout_height="55dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/box"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.219"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/create_an_account" />
 
     <ImageView
         android:id="@+id/person_vector"
@@ -92,7 +92,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/box"
         app:layout_constraintStart_toEndOf="@+id/email_box"
         app:layout_constraintTop_toBottomOf="@+id/create_an_account" />
@@ -115,7 +115,7 @@
         android:id="@+id/create_an_account"
         android:layout_width="172dp"
         android:layout_height="30dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="56dp"
         android:text="Create an account"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -137,6 +137,31 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/last_name_box" />
+
+    <EditText
+        android:id="@+id/country"
+        android:layout_width="231dp"
+        android:layout_height="54dp"
+        android:background="null"
+        android:hint="Country"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/country_box"
+        app:layout_constraintEnd_toEndOf="@+id/country_box"
+        app:layout_constraintHorizontal_bias="0.836"
+        app:layout_constraintStart_toStartOf="@+id/country_box"
+        app:layout_constraintTop_toTopOf="@+id/country_box"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/world_vector"
+        android:layout_width="35dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="36dp"
+        android:contentDescription="world_vector"
+        android:src="@drawable/world_vector"
+        app:layout_constraintStart_toStartOf="@+id/country_box"
+        app:layout_constraintTop_toBottomOf="@+id/person_vector" />
 
     <ImageView
         android:id="@+id/gradient"
