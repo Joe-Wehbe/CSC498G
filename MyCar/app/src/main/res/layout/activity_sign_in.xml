@@ -185,6 +185,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/or_sign_in_with" />
 
+    <TextView
+        android:id="@+id/sign_up"
+        android:layout_width="69dp"
+        android:layout_height="29dp"
+        android:text="@string/sign_up_string"
+        android:textColor="@color/sign_up_color"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/don_t_have_an_account_" />
+
+    <TextView
+        android:id="@+id/don_t_have_an_account_"
+        android:layout_width="174dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/don_t_have_an_account__string"
+        android:textColor="@color/sign_up_color"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/twitter" />
+
     <ImageView
         android:id="@+id/gradient"
         android:layout_width="wrap_content"
