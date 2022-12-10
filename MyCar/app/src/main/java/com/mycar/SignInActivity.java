@@ -22,7 +22,7 @@ public class SignInActivity extends AppCompatActivity {
 
     public void goToSignUp(View v){
 
-        Intent intent = new Intent(getApplicationContext(), MoreInfoActivity.class);
+        Intent intent = new Intent(getApplicationContext(), NoCarsActivity.class);
         startActivity(intent);
 
     }

@@ -21,18 +21,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <ImageView
         android:id="@+id/vector"
         android:layout_width="182dp"
         android:layout_height="177dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="56dp"
         android:contentDescription="vector"
         android:src="@drawable/car_vector"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/you_currently_have_no_cars_" />
-
 
     <ImageView
         android:id="@+id/sign_in_button"
@@ -46,7 +46,7 @@
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/vector"
-        app:layout_constraintVertical_bias="0.343" />
+        app:layout_constraintVertical_bias="0.546" />
 
     <TextView
         android:id="@+id/sign_in"
