@@ -37,7 +37,7 @@ public class AddDistanceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_distance);
 
         Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.dark_gray)));
-        getSupportActionBar().setTitle("Add distance");
+        getSupportActionBar().setTitle("Add Distance");
 
         etSource = findViewById(R.id.et_source);
         etDestination = findViewById(R.id.et_destination);

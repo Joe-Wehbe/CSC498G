@@ -2,7 +2,10 @@ package com.mycar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+
+import java.util.Objects;
 
 public class MoreInfoActivity extends AppCompatActivity {
 
@@ -10,5 +13,8 @@ public class MoreInfoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_more_info);
+
+        Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.dark_gray)));
+        getSupportActionBar().setTitle("More Info");
     }
 }

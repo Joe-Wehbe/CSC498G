@@ -17,12 +17,12 @@ public class SignInActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_in);
 
         Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.dark_gray)));
-        getSupportActionBar().setTitle("Sign in");
+        getSupportActionBar().setTitle("Sign In");
     }
 
     public void goToSignUp(View v){
 
-        Intent intent = new Intent(getApplicationContext(), AddCarActivity.class);
+        Intent intent = new Intent(getApplicationContext(), MoreInfoActivity.class);
         startActivity(intent);
 
     }

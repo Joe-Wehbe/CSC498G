@@ -15,6 +15,6 @@ public class AddCarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_car);
 
         Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.dark_gray)));
-        getSupportActionBar().setTitle("Add car");
+        getSupportActionBar().setTitle("Add Car");
     }
 }
