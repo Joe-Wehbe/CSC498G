@@ -1,38 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="12dp"
-    android:gravity="center_horizontal"
+    android:background="@drawable/background"
     tools:context=".AddDistanceActivity">
+<!--    android:orientation="vertical"-->
+<!--    android:padding="12dp"-->
+<!--    android:gravity="center_horizontal"-->
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/et_source"
-        android:hint="Enter Source Location"
-        android:padding="12dp"
-        android:background="@android:drawable/editbox_background"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/et_destination"
-        android:hint="Enter Destination Location"
-        android:padding="12dp"
-        android:layout_marginTop="8dp"
-        android:background="@android:drawable/editbox_background"/>
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:id="@+id/text_view"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
-        android:gravity="center"/>
+        app:layout_constraintBottom_toTopOf="@+id/add_disrance_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/to_box"
+        app:layout_constraintVertical_bias="0.468" />
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/to_box"
+        android:layout_width="280dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="to_box"
+        android:src="@drawable/box1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/from_box" />
+
+
+    <EditText
+        android:id="@+id/et_destination"
+        android:layout_width="238dp"
+        android:layout_height="52dp"
+        android:background="@null"
+        android:hint="To"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/to_box"
+        app:layout_constraintEnd_toEndOf="@+id/to_box"
+        app:layout_constraintHorizontal_bias="0.88"
+        app:layout_constraintStart_toStartOf="@+id/to_box"
+        app:layout_constraintTop_toTopOf="@+id/to_box"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/to_vector"
+        android:layout_width="23dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="44dp"
+        android:contentDescription="to_vector"
+        android:src="@drawable/to_vector"
+        app:layout_constraintStart_toStartOf="@+id/to_box"
+        app:layout_constraintTop_toBottomOf="@+id/from_vector" />
+
+    <ImageView
+        android:id="@+id/from_box"
+        android:layout_width="280dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="92dp"
+        android:contentDescription="from_box"
+        android:src="@drawable/box1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_source"
+        android:layout_width="229dp"
+        android:layout_height="54dp"
+        android:background="@null"
+        android:hint="From"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/from_box"
+        app:layout_constraintEnd_toEndOf="@+id/from_box"
+        app:layout_constraintHorizontal_bias="0.725"
+        app:layout_constraintStart_toStartOf="@+id/from_box"
+        app:layout_constraintTop_toTopOf="@+id/from_box"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/from_vector"
+        android:layout_width="21dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="108dp"
+        android:contentDescription="from_vector"
+        android:src="@drawable/from_vector"
+        app:layout_constraintStart_toStartOf="@+id/from_box"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/add_disrance_button"
+        android:layout_width="243dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="92dp"
+        android:contentDescription="add_disrance_button"
+        android:src="@drawable/sign_in_button"
+        app:layout_constraintBottom_toTopOf="@+id/gradient"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/add_distance"
+        android:layout_width="114dp"
+        android:layout_height="29dp"
+        android:text="Add distance"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/add_disrance_button"
+        app:layout_constraintEnd_toEndOf="@+id/add_disrance_button"
+        app:layout_constraintHorizontal_bias="0.581"
+        app:layout_constraintStart_toStartOf="@+id/add_disrance_button"
+        app:layout_constraintTop_toTopOf="@+id/add_disrance_button"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/gradient"
+        android:layout_width="wrap_content"
+        android:layout_height="129dp"
+        android:layout_marginBottom="4dp"
+        android:contentDescription="gradient"
+        android:src="@drawable/gradient"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
