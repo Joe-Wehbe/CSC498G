@@ -6,8 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -33,6 +36,11 @@ public class SignInActivity extends AppCompatActivity {
 
         Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.dark_gray)));
         getSupportActionBar().setTitle("Sign In");
+
+        TextView tv = findViewById(R.id.sign_up);
+        SpannableString text = new SpannableString("Sign up");
+        text.setSpan(new UnderlineSpan(), 0, text.length(), 0);
+        tv.setText(text);
 
         email = password = "";
         etEmail = findViewById(R.id.email_address1);
