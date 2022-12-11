@@ -35,11 +35,12 @@
         app:layout_constraintTop_toBottomOf="@+id/you_currently_have_no_cars_" />
 
     <ImageView
-        android:id="@+id/sign_in_button"
+        android:id="@+id/btn"
         android:layout_width="310dp"
         android:layout_height="146dp"
-        android:clickable="false"
+        android:clickable="true"
         android:contentDescription="sign_in_button"
+        android:onClick="addCar"
         android:src="@drawable/sign_in_button"
         app:layout_constraintBottom_toTopOf="@+id/gradient"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,10 +56,10 @@
         android:text="Add your first car!"
         android:textColor="@color/white"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/sign_in_button"
-        app:layout_constraintEnd_toEndOf="@+id/sign_in_button"
-        app:layout_constraintStart_toStartOf="@+id/sign_in_button"
-        app:layout_constraintTop_toTopOf="@+id/sign_in_button"
+        app:layout_constraintBottom_toBottomOf="@+id/btn"
+        app:layout_constraintEnd_toEndOf="@+id/btn"
+        app:layout_constraintStart_toStartOf="@+id/btn"
+        app:layout_constraintTop_toTopOf="@+id/btn"
         app:layout_constraintVertical_bias="0.517" />
 
     <ImageView

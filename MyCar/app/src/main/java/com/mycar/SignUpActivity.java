@@ -7,10 +7,8 @@ import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -22,14 +20,12 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 
 public class SignUpActivity extends AppCompatActivity {
 
     private EditText etFirstName, etLastName, etCountry, etEmail, etPassword, etConfirm;
-    //private TextView tvStatus;
     private ImageView btnRegister;
     private String URL = "http://10.31.210.7/MyCar/signUp.php";
     private String first_name, last_name, country, email, password, confirm;
@@ -46,7 +42,7 @@ public class SignUpActivity extends AppCompatActivity {
         etLastName = findViewById(R.id.last_name);
         etCountry = findViewById(R.id.country);
         etEmail = findViewById(R.id.email_address1);
-        etPassword = findViewById(R.id.password1);
+        etPassword = findViewById(R.id.password);
         etConfirm = findViewById(R.id.confirm_your_password);
         btnRegister = findViewById(R.id.sign_up_button);
 
