@@ -114,7 +114,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/email_address"
+        android:id="@+id/email_address1"
         android:layout_width="230dp"
         android:layout_height="53dp"
         android:background="@null"
@@ -128,7 +128,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/password1"
         android:layout_width="228dp"
         android:layout_height="51dp"
         android:background="@null"

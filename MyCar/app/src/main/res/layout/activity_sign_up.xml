@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".SignInActivity">
+    tools:context=".SignUpActivity">
 
     <View
         android:id="@+id/country_box4"
@@ -164,7 +164,7 @@
         app:layout_constraintTop_toBottomOf="@+id/person_vector" />
 
     <EditText
-        android:id="@+id/email_address"
+        android:id="@+id/email_address1"
         android:layout_width="230dp"
         android:layout_height="53dp"
         android:background="@null"
@@ -211,7 +211,7 @@
         app:layout_constraintEnd_toEndOf="@+id/password_vector2" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/password1"
         android:layout_width="228dp"
         android:layout_height="51dp"
         android:background="@null"
@@ -253,9 +253,11 @@
     <ImageView
         android:id="@+id/sign_up_button"
         android:layout_width="243dp"
-        android:layout_height="35dp"
+        android:layout_height="48dp"
         android:layout_marginTop="36dp"
+        android:clickable="true"
         android:contentDescription="sign_up_button"
+        android:onClick="signUp"
         android:src="@drawable/sign_in_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -273,7 +275,7 @@
         app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintStart_toStartOf="@+id/sign_up_button"
         app:layout_constraintTop_toTopOf="@+id/sign_up_button"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.526" />
 
     <ImageView
         android:id="@+id/gradient"
