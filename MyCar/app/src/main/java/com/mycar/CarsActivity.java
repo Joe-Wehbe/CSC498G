@@ -9,9 +9,15 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.google.gson.JsonArray;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -34,35 +40,44 @@ public class CarsActivity extends AppCompatActivity {
 
         listView = findViewById(R.id.listView);
 
-        
-
-
-
-        ArrayList<Car> arrayList = new ArrayList<>();
-
-        arrayList.add(new Car("Jeep", "2432355"));
-        arrayList.add(new Car("Nissan", "2233401"));
-        arrayList.add(new Car("Kia", "2012434"));
-
-        CarAdapter = new CarAdapter(this, R.layout.custom_list_view, arrayList);
-        listView.setAdapter((ListAdapter) CarAdapter);
+        getCars();
 
     }
     
     private void getCars(){
-        
+        ArrayList<Car> arrayList = new ArrayList<>();
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+                        Toast.makeText(getApplicationContext(), response, Toast.LENGTH_LONG).show();
+                        try{
+                            JSONArray array = new JSONArray(response);
+                            for(int i = 0; i < array.length(); i++){
+                                JSONObject object = array.getJSONObject(i);
 
+                                String brand = object.getString("brand");
+                                String plate = object.getString("plate") ;
+
+                                arrayList.add(new Car(brand, plate));
+                            }
+
+                        }catch (Exception e){
+
+                        }
+                        CarAdapter = new CarAdapter(CarsActivity.this, R.layout.custom_list_view, arrayList);
+                        listView.setAdapter((ListAdapter) CarAdapter);
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(CarsActivity.this, "", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CarsActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
             }
         });
+
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        requestQueue.add(stringRequest);
+
     }
 
 }
