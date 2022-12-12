@@ -73,7 +73,7 @@ public class SignUpActivity extends AppCompatActivity {
                         Intent intent = new Intent(SignUpActivity.this, NoCarsActivity.class);
                         startActivity(intent);
 
-                    } else if (response.trim().equals("failure")) {
+                    } else{
                         Toast.makeText(SignUpActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
                     }
                 }

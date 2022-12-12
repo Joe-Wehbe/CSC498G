@@ -31,10 +31,10 @@ public class CarAdapter extends ArrayAdapter<Car> {
         convertView = layoutInflater.inflate(mResource, parent, false);
 
         TextView brand = convertView.findViewById(R.id.vehicleBrand);
-        TextView model = convertView.findViewById(R.id.model);
+        TextView plate = convertView.findViewById(R.id.model);
 
         brand.setText(getItem(position).getBrand());
-        model.setText(getItem(position).getModel());
+        plate.setText(getItem(position).getPlate());
 
         return convertView;
 

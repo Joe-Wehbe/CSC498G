@@ -5,19 +5,11 @@ import android.provider.ContactsContract;
 public class Car {
 
     String brand;
-    String model;
+    String plate;
 
-    public Car(String brand, String model){
+    public Car(String brand, String plate){
         this.brand = brand;
-        this.model = model;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
+        this.plate = plate;
     }
 
     public String getBrand() {
@@ -26,5 +18,13 @@ public class Car {
 
     public void setBrand(String brand) {
         this.brand = brand;
+    }
+
+    public String getPlate() {
+        return plate;
+    }
+
+    public void setPlate(String plate) {
+        this.plate = plate;
     }
 }
