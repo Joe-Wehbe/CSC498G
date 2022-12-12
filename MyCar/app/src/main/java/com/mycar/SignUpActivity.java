@@ -8,7 +8,6 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -26,9 +25,10 @@ import java.util.Objects;
 public class SignUpActivity extends AppCompatActivity {
 
     private EditText etFirstName, etLastName, etCountry, etEmail, etPassword, etConfirm;
-    private ImageView btnRegister;
-    private String URL = "http://10.31.210.7/MyCar/signUp.php";
     private String first_name, last_name, country, email, password, confirm;
+
+    private String URL = "http://10.31.210.7/MyCar/signUp.php";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +44,6 @@ public class SignUpActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.email_address1);
         etPassword = findViewById(R.id.password);
         etConfirm = findViewById(R.id.confirm_your_password);
-        btnRegister = findViewById(R.id.sign_up_button);
 
         first_name = last_name = country = email = password = confirm = "";
 
@@ -59,24 +58,21 @@ public class SignUpActivity extends AppCompatActivity {
         confirm = etConfirm.getText().toString().trim();
 
         if(!password.equals(confirm)){
-            Toast.makeText(this, "Password mismatch", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Incorrect password confirmation", Toast.LENGTH_SHORT).show();
 
-        }else if(!first_name.equals("")
-        && !last_name.equals("")
-        && !country.equals("")
-        && !email.equals("")
-        && !password.equals("")){
+        }else if(!first_name.equals("") && !last_name.equals("") && !country.equals("")
+        && !email.equals("") && !password.equals("")){
 
             StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
 
-                    Toast.makeText(SignUpActivity.this, response , Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignUpActivity.this, response, Toast.LENGTH_SHORT).show();
 
-                    if (response.trim().equals("success")) {
+                    if (response.trim().equals("")) {
                         Intent intent = new Intent(SignUpActivity.this, NoCarsActivity.class);
                         startActivity(intent);
-                        finish();
+
                     } else if (response.trim().equals("failure")) {
                         Toast.makeText(SignUpActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
                     }
@@ -96,13 +92,15 @@ public class SignUpActivity extends AppCompatActivity {
                     data.put("country", country);
                     data.put("email", email);
                     data.put("password", password);
+                    data.put("confirm", confirm);
                     return data;
                 }
             };
             RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
             requestQueue.add(stringRequest);
 
-
+        }else{
+            Toast.makeText(this, "Fields cannot be empty", Toast.LENGTH_SHORT).show();
         }
 
     }

@@ -13,7 +13,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
@@ -25,7 +24,7 @@ import java.util.Objects;
 
 public class SignInActivity extends AppCompatActivity {
 
-    private final String URL = "http://10.31.210.7/MyCar/signIn.php";
+    private final String URL = "http://192.168.1.110/MyCar/signIn.php";
     private EditText etEmail, etPassword;
     private String email, password;
 
@@ -48,16 +47,14 @@ public class SignInActivity extends AppCompatActivity {
     }
 
 
-    public void login(View view){
+    public void signIn(View view){
         email = etEmail.getText().toString().trim();
         password = etPassword.getText().toString().trim();
 
         if(!email.equals("") && !password.equals("")){
             StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, response -> {
 
-                Toast.makeText(this, response, Toast.LENGTH_SHORT).show();
-
-                if (response.trim().equals("success1")) {
+                if(response.trim().equals("success1")) {
                     Intent intent = new Intent(SignInActivity.this, CarsActivity.class);
                     startActivity(intent);
                 }
@@ -65,13 +62,13 @@ public class SignInActivity extends AppCompatActivity {
                     Intent intent = new Intent(SignInActivity.this, NoCarsActivity.class);
                     startActivity(intent);
                 }
-                if (response.trim().equals("failure")) {
+                if(response.trim().equals("failure")) {
                     Toast.makeText(SignInActivity.this, "Invalid email or password", Toast.LENGTH_SHORT).show();
                 }
             }, error -> Toast.makeText(SignInActivity.this, error.toString().trim(), Toast.LENGTH_SHORT).show()){
                 @Nullable
                 @Override
-                protected Map<String, String> getParams() throws AuthFailureError {
+                protected Map<String, String> getParams() {
 
                     Map<String, String> data = new HashMap<>();
                     data.put("email", email);
@@ -82,17 +79,11 @@ public class SignInActivity extends AppCompatActivity {
             RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
             requestQueue.add(stringRequest);
         }else{
-            Toast.makeText(this, "Fields cannot be empty!", Toast.LENGTH_SHORT).show();
-
+            Toast.makeText(this, "Fields cannot be empty", Toast.LENGTH_SHORT).show();
         }
     }
 
-    public void signIn(View v){
-        login(v);
-    }
-
     public void goToSignUp(View v){
-
         Intent intent = new Intent(getApplicationContext(), SignUpActivity.class);
         startActivity(intent);
 
