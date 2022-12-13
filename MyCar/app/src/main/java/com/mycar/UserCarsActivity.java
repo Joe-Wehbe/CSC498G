@@ -79,7 +79,7 @@ public class UserCarsActivity extends AppCompatActivity {
 
                     listView.setOnItemClickListener((adapterView, view, i, l) -> {
                         Intent intent1 = new Intent(getApplicationContext(), CarInfoActivity.class);
-                        intent1.putExtra("carBrand", brand);
+                        intent1.putExtra("carBrand", arrayList.get(i).getBrand());
                         startActivity(intent1);
                     });
                 }

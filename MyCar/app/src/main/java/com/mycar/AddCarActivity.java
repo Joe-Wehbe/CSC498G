@@ -62,9 +62,7 @@ public class AddCarActivity extends AppCompatActivity {
             StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
-
-                    Toast.makeText(AddCarActivity.this, response, Toast.LENGTH_SHORT).show();
-
+                    
                     if (response.trim().equals("success")) {
                         Intent intent = new Intent(AddCarActivity.this, UserCarsActivity.class);
                         intent.putExtra("user_id", id);

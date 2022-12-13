@@ -80,7 +80,7 @@ public class SignUpActivity extends AppCompatActivity {
                     }catch (NumberFormatException e){
 
                         if(response.trim().equals("exists")){
-                            Toast.makeText(SignUpActivity.this, "This account is already registered", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignUpActivity.this, "This email is already registered", Toast.LENGTH_SHORT).show();
                         }
                         if(response.trim().equals("failure")){
                             Toast.makeText(SignUpActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
