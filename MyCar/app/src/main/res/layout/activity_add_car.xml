@@ -75,18 +75,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/et_model"
-        android:layout_width="231dp"
-        android:layout_height="54dp"
-        android:background="@null"
-        android:hint="Model"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/country_box6"
-        app:layout_constraintEnd_toEndOf="@+id/country_box6"
-        app:layout_constraintHorizontal_bias="0.836"
-        app:layout_constraintStart_toStartOf="@+id/country_box6" />
-
-    <EditText
         android:id="@+id/et_brand"
         android:layout_width="231dp"
         android:layout_height="54dp"
@@ -210,6 +198,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
+    <EditText
+        android:id="@+id/et_model"
+        android:layout_width="230dp"
+        android:layout_height="51dp"
+        android:background="@null"
+        android:ems="10"
+        android:hint="Model Year"
+        android:textSize="14sp"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/country_box6"
+        app:layout_constraintEnd_toEndOf="@+id/country_box6"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="@+id/country_box6"
+        app:layout_constraintTop_toTopOf="@+id/country_box6"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
