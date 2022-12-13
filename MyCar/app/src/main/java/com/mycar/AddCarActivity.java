@@ -27,6 +27,7 @@ public class AddCarActivity extends AppCompatActivity {
     private EditText etBrand, etModel, etColor, etPlate;
     private String brand, model, color, plate;
 
+    private String URL = "http://192.168.1.104/MyCar/addCar.php";
     String id;
 
     @Override
@@ -37,38 +38,40 @@ public class AddCarActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.dark_gray)));
         getSupportActionBar().setTitle("Add Car");
 
+        etBrand = findViewById(R.id.et_brand);
+        etModel = findViewById(R.id.et_model);
+        etColor = findViewById(R.id.et_color);
+        etPlate = findViewById(R.id.et_plate);
+
         Intent intent = getIntent();
         id = intent.getStringExtra("user_id");
     }
 
     public void addCar(View v){
-        
-        first_name = etFirstName.getText().toString().trim();
-        last_name = etLastName.getText().toString().trim();
-        country = etCountry.getText().toString().trim();
-        email = etEmail.getText().toString().trim();
-        password = etPassword.getText().toString().trim();
-        confirm = etConfirm.getText().toString().trim();
 
-        if(!password.equals(confirm)){
-            Toast.makeText(this, "Incorrect password confirmation", Toast.LENGTH_SHORT).show();
+        brand = etBrand.getText().toString().trim();
+        model = etModel.getText().toString().trim();
+        color = etColor.getText().toString().trim();
+        plate = etPlate.getText().toString().trim();
 
-        }else if(!first_name.equals("") && !last_name.equals("") && !country.equals("")
-                && !email.equals("") && !password.equals("")){
+        if(!brand.equals("") && !model.equals("") && !color.equals("") && !plate.equals("")){
 
             StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
 
+                    Toast.makeText(AddCarActivity.this, response, Toast.LENGTH_SHORT).show();
+
                     if (response.trim().equals("success")) {
-                        Intent intent = new Intent(SignUpActivity.this, NoCarsActivity.class);
+                        Intent intent = new Intent(AddCarActivity.this, UserCarsActivity.class);
+                        intent.putExtra("user_id", id);
                         startActivity(intent);
 
                     } else if(response.trim().equals("exists")){
-                        Toast.makeText(SignUpActivity.this, "This account is already registered", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AddCarActivity.this, "This car is already registered", Toast.LENGTH_SHORT).show();
                     }
                     else{
-                        Toast.makeText(SignUpActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AddCarActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
 
                     }
                 }
@@ -80,13 +83,13 @@ public class AddCarActivity extends AppCompatActivity {
             }){
                 @Nullable
                 @Override
-                protected Map<String, String> getParams() throws AuthFailureError {
+                protected Map<String, String> getParams() {
                     Map<String, String> data = new HashMap<>();
-                    data.put("first_name", first_name);
-                    data.put("last_name", last_name);
-                    data.put("country", country);
-                    data.put("email", email);
-                    data.put("password", password);
+                    data.put("brand", brand);
+                    data.put("model", model);
+                    data.put("color", color);
+                    data.put("plate", plate);
+                    data.put("user_id", id);
                     return data;
                 }
             };
