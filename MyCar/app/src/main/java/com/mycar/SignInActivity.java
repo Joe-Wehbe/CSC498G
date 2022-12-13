@@ -54,27 +54,18 @@ public class SignInActivity extends AppCompatActivity {
         if(!email.equals("") && !password.equals("")){
             StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, response -> {
 
+                if(response.trim().equals("success1")) {
 
-                try{
-                    int id = Integer.parseInt(response.trim());
-
-                    if(id > 0){
-                        Intent intent = new Intent(SignInActivity.this, CarsActivity.class);
-                        intent.putExtra("user_id", id);
-                        startActivity(intent);
-                    }
-
-                }catch (NumberFormatException e){
-
-                    if(response.trim().equals("success")){
-                        Intent intent = new Intent(SignInActivity.this, NoCarsActivity.class);
-                        startActivity(intent);
-                    }
-                    if(response.trim().equals("failure")) {
-                        Toast.makeText(SignInActivity.this, "Invalid email or password", Toast.LENGTH_SHORT).show();
-                    }
+                    Intent intent = new Intent(SignInActivity.this, CarsActivity.class);
+                    startActivity(intent);
                 }
-
+                if(response.trim().equals("success0")){
+                    Intent intent = new Intent(SignInActivity.this, NoCarsActivity.class);
+                    startActivity(intent);
+                }
+                if(response.trim().equals("failure")) {
+                    Toast.makeText(SignInActivity.this, "Invalid email or password", Toast.LENGTH_SHORT).show();
+                }
             }, error -> Toast.makeText(SignInActivity.this, error.toString().trim(), Toast.LENGTH_SHORT).show()){
                 @Nullable
                 @Override

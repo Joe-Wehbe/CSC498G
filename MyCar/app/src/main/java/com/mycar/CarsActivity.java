@@ -1,13 +1,16 @@
 package com.mycar;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -20,6 +23,8 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 public class CarsActivity extends AppCompatActivity {
@@ -41,16 +46,17 @@ public class CarsActivity extends AppCompatActivity {
         listView = findViewById(R.id.listView);
 
         getCars();
-
     }
     
     private void getCars(){
+
         ArrayList<Car> arrayList = new ArrayList<>();
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(getApplicationContext(), response, Toast.LENGTH_LONG).show();
+                        Toast.makeText(CarsActivity.this, response, Toast.LENGTH_SHORT).show();
+
                         try{
                             JSONArray array = new JSONArray(response);
                             for(int i = 0; i < array.length(); i++){
