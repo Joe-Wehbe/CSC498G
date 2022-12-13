@@ -66,14 +66,16 @@ public class SignUpActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(String response) {
 
-                    Toast.makeText(SignUpActivity.this, response, Toast.LENGTH_SHORT).show();
-
-                    if (response.trim().equals("")) {
+                    if (response.trim().equals("success")) {
                         Intent intent = new Intent(SignUpActivity.this, NoCarsActivity.class);
                         startActivity(intent);
 
-                    } else{
+                    } else if(response.trim().equals("exists")){
+                        Toast.makeText(SignUpActivity.this, "This account is already registered", Toast.LENGTH_SHORT).show();
+                    }
+                    else{
                         Toast.makeText(SignUpActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+
                     }
                 }
             }, new Response.ErrorListener() {
