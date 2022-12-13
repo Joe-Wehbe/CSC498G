@@ -46,7 +46,7 @@ public class UserCarsActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String id = intent.getStringExtra("user_id");
 
-        String URL = String.format(baseURL + "getCars.php?id=%1$s", id);
+        String URL = String.format(baseURL + "getUserCars.php?id=%1$s", id);
 
         ArrayList<Car> arrayList = new ArrayList<>();
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL,

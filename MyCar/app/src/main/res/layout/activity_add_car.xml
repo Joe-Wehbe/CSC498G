@@ -133,7 +133,7 @@
         android:id="@+id/brand_vector"
         android:layout_width="25dp"
         android:layout_height="21dp"
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="68dp"
         android:layout_marginTop="136dp"
         android:contentDescription="brand_vector"
         android:src="@drawable/brand_vector"
