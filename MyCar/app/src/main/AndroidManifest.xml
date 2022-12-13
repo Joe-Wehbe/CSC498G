@@ -22,7 +22,7 @@
             android:name=".CarInfoActivity"
             android:exported="false" />
         <activity
-            android:name=".CarsActivity"
+            android:name=".UserCarsActivity"
             android:exported="false" />
         <activity
             android:name=".MoreInfoActivity"

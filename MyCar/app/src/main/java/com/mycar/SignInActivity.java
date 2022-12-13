@@ -58,7 +58,7 @@ public class SignInActivity extends AppCompatActivity {
                     int id = Integer.parseInt(response.trim());
 
                     if(id > 0) {
-                        Intent intent = new Intent(SignInActivity.this, CarsActivity.class);
+                        Intent intent = new Intent(SignInActivity.this, UserCarsActivity.class);
                         intent.putExtra("user_id", Integer.toString(id));
                         startActivity(intent);
                     }
