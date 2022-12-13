@@ -216,6 +216,7 @@
         android:layout_height="51dp"
         android:background="@null"
         android:hint="Password"
+        android:inputType="textPassword"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/country_box3"
         app:layout_constraintEnd_toEndOf="@+id/country_box3"
