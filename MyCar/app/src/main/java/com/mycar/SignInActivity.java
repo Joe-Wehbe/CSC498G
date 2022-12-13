@@ -30,6 +30,9 @@ public class SignInActivity extends AppCompatActivity {
     private final String URL = "http://192.168.1.104/MyCar/signIn.php";
     private EditText etEmail, etPassword;
     private String email, password;
+    private int id;
+    private int hasCar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,21 +63,28 @@ public class SignInActivity extends AppCompatActivity {
             StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, response -> {
 
                 try{
-                    int id = Integer.parseInt(response.trim());
+                    hasCar = Integer.parseInt(response.trim().substring(0,1));
+                    id = Integer.parseInt(response.trim().substring(1));
 
-                    if(id > 0) {
+                    if(id > 0 && hasCar == 1) {
                         Intent intent = new Intent(SignInActivity.this, UserCarsActivity.class);
                         intent.putExtra("user_id", Integer.toString(id));
                         startActivity(intent);
                     }
 
-                }catch (NumberFormatException e){
-                    if(response.trim().equals("success")){
+                    if(id > 0 && hasCar == 0){
                         Intent intent = new Intent(SignInActivity.this, NoCarsActivity.class);
+                        intent.putExtra("user_id", Integer.toString(id));
                         startActivity(intent);
                     }
+
+                }catch (NumberFormatException e){
+
                     if(response.trim().equals("failure")) {
                         Toast.makeText(SignInActivity.this, "Invalid email or password", Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        Toast.makeText(SignInActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
                     }
                 }
 
