@@ -27,8 +27,7 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText etFirstName, etLastName, etCountry, etEmail, etPassword, etConfirm;
     private String first_name, last_name, country, email, password, confirm;
 
-    private String URL = "http://10.31.210.7/MyCar/signUp.php";
-
+    private String URL = "http://192.168.1.104/MyCar/signUp.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,12 +86,11 @@ public class SignUpActivity extends AppCompatActivity {
                 @Override
                 protected Map<String, String> getParams() throws AuthFailureError {
                     Map<String, String> data = new HashMap<>();
-                    data.put("firstName", first_name);
-                    data.put("lastName", last_name);
+                    data.put("first_name", first_name);
+                    data.put("last_name", last_name);
                     data.put("country", country);
                     data.put("email", email);
                     data.put("password", password);
-                    data.put("confirm", confirm);
                     return data;
                 }
             };
