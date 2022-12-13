@@ -4,8 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -25,6 +23,9 @@ public class UserCarsActivity extends AppCompatActivity {
 
     ListView listView;
     private Object CarAdapter;
+
+    String brand;
+    String plate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,8 +59,8 @@ public class UserCarsActivity extends AppCompatActivity {
                         for(int i = 0; i < array.length(); i++){
                             JSONObject object = array.getJSONObject(i);
 
-                            String brand = object.getString("brand");
-                            String plate = object.getString("plate") ;
+                            brand = object.getString("brand");
+                            plate = object.getString("plate") ;
 
                             arrayList.add(new Car(brand, plate));
                         }
@@ -72,6 +73,7 @@ public class UserCarsActivity extends AppCompatActivity {
 
                     listView.setOnItemClickListener((adapterView, view, i, l) -> {
                         Intent intent1 = new Intent(getApplicationContext(), CarInfoActivity.class);
+                        intent1.putExtra("carBrand", brand);
                         startActivity(intent1);
                     });
                 }
