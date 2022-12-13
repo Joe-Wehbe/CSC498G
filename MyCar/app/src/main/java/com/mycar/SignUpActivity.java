@@ -69,16 +69,22 @@ public class SignUpActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(String response) {
 
-                    if (response.trim().equals("success")) {
-                        Intent intent = new Intent(SignUpActivity.this, NoCarsActivity.class);
-                        startActivity(intent);
+                    try{
+                        int id = Integer.parseInt(response.trim());
+                        if (id > 0) {
+                            Intent intent = new Intent(SignUpActivity.this, NoCarsActivity.class);
+                            intent.putExtra("user_id", Integer.toString(id));
+                            startActivity(intent);
+                        }
 
-                    } else if(response.trim().equals("exists")){
-                        Toast.makeText(SignUpActivity.this, "This account is already registered", Toast.LENGTH_SHORT).show();
-                    }
-                    else{
-                        Toast.makeText(SignUpActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                    }catch (NumberFormatException e){
 
+                        if(response.trim().equals("exists")){
+                            Toast.makeText(SignUpActivity.this, "This account is already registered", Toast.LENGTH_SHORT).show();
+                        }
+                        if(response.trim().equals("failure")){
+                            Toast.makeText(SignUpActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                        }
                     }
                 }
             }, new Response.ErrorListener() {
