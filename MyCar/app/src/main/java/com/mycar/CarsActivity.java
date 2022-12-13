@@ -20,6 +20,7 @@ import com.android.volley.toolbox.Volley;
 import com.google.gson.JsonArray;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -29,7 +30,7 @@ import java.util.Objects;
 
 public class CarsActivity extends AppCompatActivity {
 
-    private static final String URL = "http://192.168.1.110/MyCar/getCars.php";
+    private static String baseURL = "http://192.168.1.104/MyCar/";
 
     ListView listView;
     private Object CarAdapter;
@@ -45,44 +46,46 @@ public class CarsActivity extends AppCompatActivity {
 
         listView = findViewById(R.id.listView);
 
-        getCars();
+        getUserCars();
     }
     
-    private void getCars(){
+    private void getUserCars(){
+
+        Intent intent = getIntent();
+        String id = intent.getStringExtra("user_id");
+
+        Toast.makeText(this, id, Toast.LENGTH_SHORT).show();
+
+        String URL = String.format(baseURL + "getCars.php?param1=%1$s", id);
 
         ArrayList<Car> arrayList = new ArrayList<>();
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        Toast.makeText(CarsActivity.this, response, Toast.LENGTH_SHORT).show();
+            new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    Toast.makeText(CarsActivity.this, response, Toast.LENGTH_SHORT).show();
 
-                        try{
-                            JSONArray array = new JSONArray(response);
-                            for(int i = 0; i < array.length(); i++){
-                                JSONObject object = array.getJSONObject(i);
+                    try{
+                        JSONArray array = new JSONArray(response);
+                        for(int i = 0; i < array.length(); i++){
+                            JSONObject object = array.getJSONObject(i);
 
-                                String brand = object.getString("brand");
-                                String plate = object.getString("plate") ;
+                            String brand = object.getString("brand");
+                            String plate = object.getString("plate") ;
 
-                                arrayList.add(new Car(brand, plate));
-                            }
-
-                        }catch (Exception e){
-
+                            arrayList.add(new Car(brand, plate));
                         }
-                        CarAdapter = new CarAdapter(CarsActivity.this, R.layout.custom_list_view, arrayList);
-                        listView.setAdapter((ListAdapter) CarAdapter);
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(CarsActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
-            }
-        });
 
-        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-        requestQueue.add(stringRequest);
+                    }catch (Exception e){
+
+                    }
+                    CarAdapter = new CarAdapter(CarsActivity.this, R.layout.custom_list_view, arrayList);
+                    listView.setAdapter((ListAdapter) CarAdapter);
+                }
+            }, error -> Toast.makeText(CarsActivity.this, error.toString(), Toast.LENGTH_SHORT).show());
+
+            RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+            requestQueue.add(stringRequest);
 
     }
 
