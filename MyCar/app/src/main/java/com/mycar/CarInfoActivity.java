@@ -1,6 +1,7 @@
 package com.mycar;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
@@ -14,6 +15,8 @@ public class CarInfoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_car_info);
+
+        getWindow().setStatusBarColor(ContextCompat.getColor(getApplicationContext(), R.color.black));
 
         Intent intent = getIntent();
         String brand = intent.getStringExtra("carBrand");
