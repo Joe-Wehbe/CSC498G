@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -26,6 +27,7 @@ public class UserCarsActivity extends AppCompatActivity {
 
     String brand;
     String plate;
+    String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,13 +40,13 @@ public class UserCarsActivity extends AppCompatActivity {
 
         listView = findViewById(R.id.listView);
 
+        Intent intent = getIntent();
+        id = intent.getStringExtra("user_id");
+
         getUserCars();
     }
     
     private void getUserCars(){
-
-        Intent intent = getIntent();
-        String id = intent.getStringExtra("user_id");
 
         String URL = String.format(baseURL + "getUserCars.php?id=%1$s", id);
 
@@ -82,6 +84,12 @@ public class UserCarsActivity extends AppCompatActivity {
             RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
             requestQueue.add(stringRequest);
 
+    }
+
+    public void goToAddCar(View v){
+        Intent intent = new Intent(UserCarsActivity.this, AddCarActivity.class);
+        intent.putExtra("user_id", id);
+        startActivity(intent);
     }
 
 }
