@@ -6,6 +6,7 @@ import androidx.core.content.ContextCompat;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.View;
 
 import java.util.Objects;
 
@@ -26,5 +27,10 @@ public class CarInfoActivity extends AppCompatActivity {
 
         Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.background)));
         getSupportActionBar().setTitle(brand);
+    }
+
+    public void goToMoreInfo(View v){
+        Intent intent = new Intent(CarInfoActivity.this, MoreInfoActivity.class);
+        startActivity(intent);
     }
 }

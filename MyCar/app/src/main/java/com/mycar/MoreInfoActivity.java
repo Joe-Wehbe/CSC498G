@@ -17,7 +17,7 @@ public class MoreInfoActivity extends AppCompatActivity {
 
         getWindow().setStatusBarColor(ContextCompat.getColor(getApplicationContext(), R.color.black));
 
-        Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.dark_gray)));
+        Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.background)));
         getSupportActionBar().setTitle("More Info");
     }
 }
