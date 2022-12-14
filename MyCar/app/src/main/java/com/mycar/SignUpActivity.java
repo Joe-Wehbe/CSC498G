@@ -28,7 +28,7 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText etFirstName, etLastName, etCountry, etEmail, etPassword, etConfirm;
     private String first_name, last_name, country, email, password, confirm;
 
-    private String URL = "http://192.168.1.104/MyCar/signUp.php";
+    private String URL = "http://192.168.1.105/MyCar/signUp.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

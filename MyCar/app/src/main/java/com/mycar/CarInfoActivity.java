@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,7 +44,13 @@ public class CarInfoActivity extends AppCompatActivity {
     private TextView tvModel;
     private TextView tvPlate;
 
-    private static String baseURL = "http://192.168.1.104/MyCar/";
+    private Button btn;
+    private Button btn2;
+    private Button btn3;
+    private Button btn4;
+    private Button btn5;
+
+    private static String baseURL = "http://192.168.1.105/MyCar/";
     private String id;
 
     AlertDialog.Builder builder;
@@ -78,6 +86,12 @@ public class CarInfoActivity extends AppCompatActivity {
         tvModel = findViewById(R.id.tv_model);
         tvColor = findViewById(R.id.tv_color);
         tvPlate = findViewById(R.id.tv_plate);
+
+        btn = findViewById(R.id.Rbutton);
+        btn2 = findViewById(R.id.Rbutton2);
+        btn3 = findViewById(R.id.Rbutton3);
+        btn4 = findViewById(R.id.Rbutton4);
+        btn5 = findViewById(R.id.Rbutton5);
 
         builder = new AlertDialog.Builder(this);
 
@@ -175,13 +189,22 @@ public class CarInfoActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void refillTf(View view) {
         if (pbTf.getProgress() < 100){
-            builder.setTitle("Refill Transmission Fluid")
-                    .setMessage("Are you sure you want to refill the transmission fluid?")
-                    .setCancelable(true)
-                    .setPositiveButton("Yes", (dialogInterface, i1) -> finish())
-                    .setNegativeButton("No", (dialogInterface, i12) -> dialogInterface.cancel()).show();
-            pbTf.setProgress(100);
-            tvTf.setText(pbTf.getProgress() + "%");
+            btn3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    builder.setTitle("Refill Transmission Fluid")
+                            .setMessage("Are you sure you want to refill the transmission fluid?")
+                            .setCancelable(true)
+                            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    pbPsf.setProgress(100);
+                                    tvPsf.setText(pbPsf.getProgress() + "%");
+                                }
+                            })
+                            .setNegativeButton("No", (dialogInterface, i12) -> dialogInterface.cancel()).show();
+                }
+            });
         }
     }
 
@@ -191,10 +214,16 @@ public class CarInfoActivity extends AppCompatActivity {
             builder.setTitle("Refill Power Steering Fluid")
                     .setMessage("Are you sure you want to refill the power steering fluid?")
                     .setCancelable(true)
-                    .setPositiveButton("Yes", (dialogInterface, i1) -> finish())
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            pbPsf.setProgress(100);
+                            tvPsf.setText(pbPsf.getProgress() + "%");
+                            finish();
+                        }
+                    })
                     .setNegativeButton("No", (dialogInterface, i12) -> dialogInterface.cancel()).show();
-            pbPsf.setProgress(100);
-            tvPsf.setText(pbPsf.getProgress() + "%");
+
         }
     }
 

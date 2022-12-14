@@ -51,20 +51,22 @@
         android:id="@+id/bf_progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="5dp"
         android:text="60%"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/bf"
         app:layout_constraintEnd_toEndOf="@+id/bf"
-        app:layout_constraintHorizontal_bias="0.588"
+        app:layout_constraintHorizontal_bias="0.544"
         app:layout_constraintStart_toStartOf="@+id/bf"
         app:layout_constraintTop_toTopOf="@+id/bf"
-        app:layout_constraintVertical_bias="0.555">
+        app:layout_constraintVertical_bias="0.444">
 
     </TextView>
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/Rbutton4"
         android:layout_width="88dp"
         android:layout_height="48dp"
         android:backgroundTint="#3DBD19"
@@ -119,10 +121,10 @@
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/eo"
         app:layout_constraintEnd_toEndOf="@+id/eo"
-        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="@+id/eo"
         app:layout_constraintTop_toTopOf="@+id/eo"
-        app:layout_constraintVertical_bias="0.592">
+        app:layout_constraintVertical_bias="0.506">
 
     </TextView>
 
@@ -130,11 +132,12 @@
         android:id="@+id/psf_progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
         android:text="60%"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/psf"
         app:layout_constraintEnd_toEndOf="@+id/psf"
-        app:layout_constraintHorizontal_bias="0.534"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="@+id/psf"
         app:layout_constraintTop_toTopOf="@+id/psf"
         app:layout_constraintVertical_bias="0.555">
@@ -142,7 +145,7 @@
     </TextView>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/Rbutton2"
         android:layout_width="88dp"
         android:layout_height="48dp"
         android:backgroundTint="#3DBD19"
@@ -154,7 +157,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ec" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/Rbutton"
         android:layout_width="88dp"
         android:layout_height="48dp"
         android:backgroundTint="#3DBD19"
@@ -169,11 +172,12 @@
         android:id="@+id/tf_progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:text="60%"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/tf"
         app:layout_constraintEnd_toEndOf="@+id/tf"
-        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="@+id/tf"
         app:layout_constraintTop_toTopOf="@+id/tf"
         app:layout_constraintVertical_bias="0.555">
@@ -192,7 +196,7 @@
         app:layout_constraintStart_toStartOf="@+id/psf" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/Rbutton5"
         android:layout_width="88dp"
         android:layout_height="48dp"
         android:backgroundTint="#3DBD19"
@@ -224,10 +228,10 @@
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/ec"
         app:layout_constraintEnd_toEndOf="@+id/ec"
-        app:layout_constraintHorizontal_bias="0.547"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="@+id/ec"
         app:layout_constraintTop_toTopOf="@+id/ec"
-        app:layout_constraintVertical_bias="0.592">
+        app:layout_constraintVertical_bias="0.506">
 
     </TextView>
 
@@ -235,7 +239,7 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Breaks"
+        android:text="Breaks Fluid"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/bf"
         app:layout_constraintEnd_toEndOf="@+id/bf"
@@ -254,7 +258,7 @@
         app:layout_constraintStart_toStartOf="@+id/eo" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/Rbutton3"
         android:layout_width="88dp"
         android:layout_height="48dp"
         android:backgroundTint="#3DBD19"
@@ -406,7 +410,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/Rbutton4" />
 
     <Button
         android:id="@+id/button7"
