@@ -38,6 +38,11 @@ public class CarInfoActivity extends AppCompatActivity {
     private TextView tvPsf;
     private TextView tvBf;
 
+    private TextView tvBrand;
+    private TextView tvColor;
+    private TextView tvModel;
+    private TextView tvPlate;
+
     private static String baseURL = "http://192.168.1.104/MyCar/";
     private String id;
 
@@ -68,31 +73,32 @@ public class CarInfoActivity extends AppCompatActivity {
         tvPsf = findViewById(R.id.psf_progress);
         tvBf = findViewById(R.id.bf_progress);
 
+        tvBrand = findViewById(R.id.tv_brand);
+        tvModel = findViewById(R.id.tv_model);
+        tvColor = findViewById(R.id.tv_color);
+        tvPlate = findViewById(R.id.tv_plate);
 
-        String URL = String.format(baseURL + "getCarFluids.php?id=%1$s", id);
+        getCarInfo();
+        getCarFluids();
+
+    }
+
+    public void getCarInfo(){
+        String URL = String.format(baseURL + "getCarInfo.php?id=%1$s", id);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-
-                        Toast.makeText(CarInfoActivity.this, response, Toast.LENGTH_SHORT).show();
 
                         try{
                             JSONArray array = new JSONArray(response);
                             for(int i = 0; i < array.length(); i++){
                                 JSONObject object = array.getJSONObject(i);
 
-                                tvEo.setText(object.getString("engine_oil").trim());
-                                tvEc.setText(object.getString("engine_coolant").trim());
-                                tvTf.setText(object.getString("transmission_fluid").trim());
-                                tvPsf.setText(object.getString("power_steering_fluid").trim());
-                                tvBf.setText(object.getString("breaks_fluid").trim());
-
-                                pbEo.setProgress(Integer.parseInt(object.getString("engine_oil").trim()));
-                                pbEc.setProgress(Integer.parseInt(object.getString("engine_coolant").trim()));
-                                pbTf.setProgress(Integer.parseInt(object.getString("transmission_fluid").trim()));
-                                pbPsf.setProgress(Integer.parseInt(object.getString("power_steering_fluid").trim()));
-                                pbBf.setProgress(Integer.parseInt(object.getString("breaks_fluid").trim()));
+                                tvBrand.setText(object.getString("brand").trim());
+                                tvModel.setText(object.getString("model").trim());
+                                tvColor.setText(object.getString("color").trim());
+                                tvPlate.setText(object.getString("plate").trim());
 
                             }
 
@@ -104,8 +110,42 @@ public class CarInfoActivity extends AppCompatActivity {
 
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         requestQueue.add(stringRequest);
+    }
 
+    public void getCarFluids(){
+        String URL = String.format(baseURL + "getCarFluids.php?id=%1$s", id);
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
 
+                        try{
+                            JSONArray array = new JSONArray(response);
+                            for(int i = 0; i < array.length(); i++){
+                                JSONObject object = array.getJSONObject(i);
+
+                                pbEo.setProgress(Integer.parseInt(object.getString("engine_oil").trim()));
+                                pbEc.setProgress(Integer.parseInt(object.getString("engine_coolant").trim()));
+                                pbTf.setProgress(Integer.parseInt(object.getString("transmission_fluid").trim()));
+                                pbPsf.setProgress(Integer.parseInt(object.getString("power_steering_fluid").trim()));
+                                pbBf.setProgress(Integer.parseInt(object.getString("breaks_fluid").trim()));
+
+                                tvEo.setText(object.getString("engine_oil").trim());
+                                tvEc.setText(object.getString("engine_coolant").trim());
+                                tvTf.setText(object.getString("transmission_fluid").trim());
+                                tvPsf.setText(object.getString("power_steering_fluid").trim());
+                                tvBf.setText(object.getString("breaks_fluid").trim());
+
+                            }
+
+                        }catch (Exception e){
+                            e.printStackTrace();
+                        }
+                    }
+                }, error -> Toast.makeText(CarInfoActivity.this, error.toString(), Toast.LENGTH_SHORT).show());
+
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        requestQueue.add(stringRequest);
     }
 
     public void refillEo(View view) {
