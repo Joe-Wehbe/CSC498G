@@ -8,9 +8,13 @@ import android.animation.PropertyValuesHolder;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Display;
+import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 
 public class SplashScreenActivity extends AppCompatActivity {
+
+    ImageView img;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,15 +32,12 @@ public class SplashScreenActivity extends AppCompatActivity {
             finish();
         }, 5000);
 
-        // Animating the logo in the splash screen
-        ImageView iv = findViewById(R.id.logo);
-        ObjectAnimator scaleDown = ObjectAnimator.ofPropertyValuesHolder(
-                iv,
-                PropertyValuesHolder.ofFloat("scaleX", 1.2f),
-                PropertyValuesHolder.ofFloat("scaleY", 1.2f));
-        scaleDown.setDuration(1000);
-        scaleDown.setRepeatCount(ObjectAnimator.INFINITE);
-        scaleDown.setRepeatMode(ObjectAnimator.REVERSE);
-        scaleDown.start();
+        img = findViewById(R.id.logo);
+
+        TranslateAnimation animation = new TranslateAnimation(-1000, 1000, 0, 0);
+        animation.setDuration(2000);
+        animation.setRepeatCount(5);
+        animation.setRepeatMode(1); 
+        img.startAnimation(animation);
     }
 }
