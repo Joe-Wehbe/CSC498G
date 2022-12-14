@@ -38,13 +38,6 @@ public class CarInfoActivity extends AppCompatActivity {
     private TextView tvPsf;
     private TextView tvBf;
 
-    private String eo;
-    private String ec;
-    private String tf;
-    private String psf;
-    private String bf;
-
-
     private static String baseURL = "http://192.168.1.104/MyCar/";
     private String id;
 
@@ -75,41 +68,31 @@ public class CarInfoActivity extends AppCompatActivity {
         tvPsf = findViewById(R.id.psf_progress);
         tvBf = findViewById(R.id.bf_progress);
 
-        getCarFluids();
-
-        pbEo.setProgress(Integer.parseInt(eo.trim()));
-        pbEc.setProgress(Integer.parseInt(ec.trim()));
-        pbTf.setProgress(Integer.parseInt(tf.trim()));
-        pbPsf.setProgress(Integer.parseInt(psf.trim()));
-        pbBf.setProgress(Integer.parseInt(bf.trim()));
-
-        tvEo.setText(eo);
-        tvEc.setText(ec);
-        tvTf.setText(tf);
-        tvPsf.setText(psf);
-        tvBf.setText(bf);
-
-    }
-
-    private void getCarFluids(){
 
         String URL = String.format(baseURL + "getCarFluids.php?id=%1$s", id);
-
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+
+                        Toast.makeText(CarInfoActivity.this, response, Toast.LENGTH_SHORT).show();
 
                         try{
                             JSONArray array = new JSONArray(response);
                             for(int i = 0; i < array.length(); i++){
                                 JSONObject object = array.getJSONObject(i);
 
-                                eo = object.getString("engine_oil");
-                                ec = object.getString("engine_coolant");
-                                tf = object.getString("transmission_fluid") ;
-                                psf = object.getString("power_steering_fluid") ;
-                                bf = object.getString("breaks_fluid") ;
+                                tvEo.setText(object.getString("engine_oil").trim());
+                                tvEc.setText(object.getString("engine_coolant").trim());
+                                tvTf.setText(object.getString("transmission_fluid").trim());
+                                tvPsf.setText(object.getString("power_steering_fluid").trim());
+                                tvBf.setText(object.getString("breaks_fluid").trim());
+
+                                pbEo.setProgress(Integer.parseInt(object.getString("engine_oil").trim()));
+                                pbEc.setProgress(Integer.parseInt(object.getString("engine_coolant").trim()));
+                                pbTf.setProgress(Integer.parseInt(object.getString("transmission_fluid").trim()));
+                                pbPsf.setProgress(Integer.parseInt(object.getString("power_steering_fluid").trim()));
+                                pbBf.setProgress(Integer.parseInt(object.getString("breaks_fluid").trim()));
 
                             }
 
@@ -121,6 +104,7 @@ public class CarInfoActivity extends AppCompatActivity {
 
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         requestQueue.add(stringRequest);
+
 
     }
 
