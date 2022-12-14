@@ -8,6 +8,20 @@
     tools:context=".SignInActivity">
 
 
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="239dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="@color/dark_gray"
+        android:onClick="signIn"
+        android:text="Sign in"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.532"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_box" />
+
     <TextView
         android:id="@+id/sign_into_your_account"
         android:layout_width="205dp"
@@ -105,31 +119,6 @@
         app:layout_constraintTop_toTopOf="@+id/password_vector"
         app:layout_constraintVertical_bias="1.0" />
 
-    <ImageView
-        android:id="@+id/btn"
-        android:layout_width="243dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="36dp"
-        android:contentDescription="sign_in_button"
-        android:onClick="signIn"
-        android:src="@drawable/sign_in_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_box" />
-
-    <TextView
-        android:id="@+id/sign_in"
-        android:layout_width="70dp"
-        android:layout_height="29dp"
-        android:text="Sign in"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/btn"
-        app:layout_constraintEnd_toEndOf="@+id/btn"
-        app:layout_constraintHorizontal_bias="0.549"
-        app:layout_constraintStart_toStartOf="@+id/btn"
-        app:layout_constraintTop_toTopOf="@+id/btn" />
-
     <View
         android:id="@+id/line2"
         android:layout_width="125dp"
@@ -145,14 +134,14 @@
         android:id="@+id/or_sign_in_with"
         android:layout_width="101dp"
         android:layout_height="24dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="56dp"
         android:text="Or sign in with"
         android:textColor="#000000"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn" />
+        app:layout_constraintTop_toBottomOf="@+id/button11" />
 
     <View
         android:id="@+id/line1"

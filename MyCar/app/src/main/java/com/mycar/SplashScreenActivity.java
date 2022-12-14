@@ -23,10 +23,8 @@ public class SplashScreenActivity extends AppCompatActivity {
 
         getWindow().setStatusBarColor(ContextCompat.getColor(getApplicationContext(), R.color.black));
 
-        // Hiding the action bar
         getSupportActionBar().hide();
 
-        // Loading time
         new Handler().postDelayed(() -> {
             startActivity(new Intent(SplashScreenActivity.this, SignInActivity.class));
             finish();
@@ -37,7 +35,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         TranslateAnimation animation = new TranslateAnimation(-1000, 1000, 0, 0);
         animation.setDuration(2000);
         animation.setRepeatCount(5);
-        animation.setRepeatMode(1); 
+        animation.setRepeatMode(1);
         img.startAnimation(animation);
     }
 }

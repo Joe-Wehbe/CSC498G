@@ -7,6 +7,19 @@
     android:background="@drawable/background"
     tools:context=".SignUpActivity">
 
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="239dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="@color/dark_gray"
+        android:onClick="signUp"
+        android:text="Sign up"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/country_box4" />
+
     <View
         android:id="@+id/country_box4"
         android:layout_width="280dp"
@@ -250,33 +263,6 @@
         app:layout_constraintStart_toStartOf="@+id/country_box4"
         app:layout_constraintTop_toTopOf="@+id/country_box4"
         app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/sign_up_button"
-        android:layout_width="243dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="36dp"
-        android:clickable="true"
-        android:contentDescription="sign_up_button"
-        android:onClick="signUp"
-        android:src="@drawable/sign_in_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/country_box4" />
-
-    <TextView
-        android:id="@+id/sign_up"
-        android:layout_width="76dp"
-        android:layout_height="29dp"
-        android:text="Sign up"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/sign_up_button"
-        app:layout_constraintEnd_toEndOf="@+id/sign_up_button"
-        app:layout_constraintHorizontal_bias="0.55"
-        app:layout_constraintStart_toStartOf="@+id/sign_up_button"
-        app:layout_constraintTop_toTopOf="@+id/sign_up_button"
-        app:layout_constraintVertical_bias="0.526" />
 
     <ImageView
         android:id="@+id/gradient"
