@@ -11,8 +11,11 @@ import java.util.Objects;
 
 public class CarInfoActivity extends AppCompatActivity {
 
+    private int progress = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_car_info);
 
