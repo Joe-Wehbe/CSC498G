@@ -37,7 +37,7 @@
     <Button
         android:id="@+id/button3"
         android:layout_width="88dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginStart="44dp"
         android:backgroundTint="#3DBD19"
         android:text="Refill"
@@ -117,7 +117,7 @@
     <Button
         android:id="@+id/button5"
         android:layout_width="88dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginStart="24dp"
         android:backgroundTint="#3DBD19"
         android:text="Refill"
@@ -155,7 +155,7 @@
     <Button
         android:id="@+id/button2"
         android:layout_width="88dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginStart="56dp"
         android:backgroundTint="#3DBD19"
         android:text="Refill"
@@ -318,7 +318,7 @@
     <Button
         android:id="@+id/button"
         android:layout_width="88dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginStart="80dp"
         android:backgroundTint="#3DBD19"
         android:text="Refill"
@@ -328,7 +328,7 @@
     <Button
         android:id="@+id/button4"
         android:layout_width="88dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginStart="24dp"
         android:backgroundTint="#3DBD19"
         android:text="Refill"
@@ -389,6 +389,7 @@
         android:layout_height="52dp"
         android:layout_marginTop="28dp"
         android:backgroundTint="#A39898"
+        android:onClick="goToAddDistance"
         android:text="New Distance Driven"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"

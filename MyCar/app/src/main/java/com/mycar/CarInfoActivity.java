@@ -29,6 +29,11 @@ public class CarInfoActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(brand);
     }
 
+    public void goToAddDistance(View v){
+        Intent intent = new Intent(CarInfoActivity.this, AddDistanceActivity.class);
+        startActivity(intent);
+    }
+
     public void goToMoreInfo(View v){
         Intent intent = new Intent(CarInfoActivity.this, MoreInfoActivity.class);
         startActivity(intent);
