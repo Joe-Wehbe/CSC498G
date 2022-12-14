@@ -21,7 +21,7 @@ public class CarInfoActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String brand = intent.getStringExtra("carBrand");
 
-        Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.dark_gray)));
+        Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.background)));
         getSupportActionBar().setTitle(brand);
     }
 }
