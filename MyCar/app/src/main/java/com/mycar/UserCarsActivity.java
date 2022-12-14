@@ -22,7 +22,7 @@ import java.util.Objects;
 
 public class UserCarsActivity extends AppCompatActivity {
 
-    private static String baseURL = "http://192.168.1.103/MyCar/";
+    private static String baseURL = "http://192.168.1.104/MyCar/";
 
     ListView listView;
     private Object CarAdapter;
@@ -72,7 +72,7 @@ public class UserCarsActivity extends AppCompatActivity {
                         }
 
                     }catch (Exception e){
-
+                        e.printStackTrace();
                     }
                     CarAdapter = new CarAdapter(UserCarsActivity.this, R.layout.custom_list_view, arrayList);
                     listView.setAdapter((ListAdapter) CarAdapter);
@@ -80,6 +80,7 @@ public class UserCarsActivity extends AppCompatActivity {
                     listView.setOnItemClickListener((adapterView, view, i, l) -> {
                         Intent intent1 = new Intent(getApplicationContext(), CarInfoActivity.class);
                         intent1.putExtra("carBrand", arrayList.get(i).getBrand());
+                        intent1.putExtra("user_id", id);
                         startActivity(intent1);
                     });
                 }
