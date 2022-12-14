@@ -2,12 +2,12 @@
 Mobile application that keeps track of your vehicles' fluids. 
 
 # Project Description :page_with_curl:
-  First, a signin page will be shown where users can enter their email and password to access the application directly. In case they do not have an account, they will be asked to enter their first name, last name, country, email, and password. All this information will be stored in MySQL database (table users) and you can access it using phpMyAdmin under the 'Database' folder in the repository. 
-  Once complete, a list of the user's vehicles will be displayed (if they have any), and they can check each vehicle's current amount of fluids remaining. Users have the option to add new vehicles, they will be asked to enter the: brand, model, color, plate, and an image. This information will be stored in the table 'cars' of the database. 
-  When a new distance is driven, users will have to enter two locations, the application will calculate the distance driven, and the amount of fluids will be updated accordingly.
+  First, a signin page will be shown where users can enter their email and password to access the application directly. In case they do not have an account, they will be asked to enter their first name, last name, country, email, and password. All this information will be stored in MySQL database (table users) and you can access it using phpMyAdmin under the 'Database' folder in the repository.\
+  Once complete, a list of the user's vehicles will be displayed (if they have any), and they can check each vehicle's current amount of fluids remaining. Users have the option to add new vehicles, they will be asked to enter the: brand, model, color, plate. This information will be stored in the table 'cars' of the database.\
+  When a new distance is driven, users will have to enter it in miles, and the application will update the remaining amount of fluids accordingly. 
 
 # Contributors :raising_hand_man:
-## <a href="https://github.com/Joe-Wehbe">Joe Wehbe</a>
+<a href="https://github.com/Joe-Wehbe">Joe Wehbe</a>
 
 # App Preview :iphone:
 ![activity1](https://user-images.githubusercontent.com/102875229/206588350-4c39d33a-f74b-48f3-ba35-ac31bcc0a1fb.jpg)
