@@ -1,5 +1,5 @@
 # MyCar :car:
-Mobile application that keeps track of your vehicles' fluids. 
+Mobile application that keeps track of your vehicle(s) fluids. 
 
 # Project Description :page_with_curl:
      First, a signin page will be shown where users can enter their email and password to access the application directly. In case they do not have an account, they will be asked to enter their first name, last name, country, email, and password. All this information will be stored in MySQL database (table users) and you can access it using phpMyAdmin under the 'Database' folder in the repository.\
