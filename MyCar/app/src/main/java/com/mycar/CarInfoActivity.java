@@ -269,23 +269,62 @@ public class CarInfoActivity extends AppCompatActivity {
         }
     }
 
+    public void updateFluids(String eo, String ec, String tf, String psf, String bf){
+
+        String URL = baseURL + "updateFluids.php";
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, response -> {
+
+            if(response.trim().equals("success")){
+                Toast.makeText(CarInfoActivity.this, "Fluids updated", Toast.LENGTH_SHORT).show();
+            }
+            if(response.trim().equals("failure")){
+                Toast.makeText(CarInfoActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+            }
+        }, error -> Toast.makeText(getApplicationContext(), error.toString().trim(), Toast.LENGTH_SHORT).show()){
+            @Nullable
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> data = new HashMap<>();
+                data.put("eo", eo);
+                data.put("ec", ec);
+                data.put("tf", tf);
+                data.put("psf", psf);
+                data.put("bf", bf);
+                data.put("user_id", id);
+                data.put("car_id", car_id);
+
+                return data;
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        requestQueue.add(stringRequest);
+    }
+
     @SuppressLint("SetTextI18n")
-    public void updateFluids(){
+    public void calculateAmountRemaining(){
 
         pbEo.setProgress(pbEo.getProgress() - 100 * distanceDriven/7500);
         tvEo.setText(pbEo.getProgress() + "%");
+        String eo = Integer.toString(pbEo.getProgress());
 
         pbEc.setProgress(pbEc.getProgress() - 100 * distanceDriven/30000);
         tvEc.setText(pbEc.getProgress() + "%");
+        String ec = Integer.toString(pbEc.getProgress());
 
         pbTf.setProgress(pbTf.getProgress() - 100 * distanceDriven/45000);
         tvTf.setText(pbTf.getProgress() + "%");
+        String tf = Integer.toString(pbTf.getProgress());
 
         pbPsf.setProgress(pbPsf.getProgress() - 100 * distanceDriven/60000);
         tvPsf.setText(pbPsf.getProgress() + "%");
+        String psf = Integer.toString(pbPsf.getProgress());
 
         pbBf.setProgress(pbBf.getProgress() - 100 * distanceDriven/30000);
         tvBf.setText(pbBf.getProgress() + "%");
+        String bf = Integer.toString(pbBf.getProgress());
+
+        updateFluids(eo, ec, tf, psf, bf);
     }
 
     public void addNewDistance(View v){
@@ -301,7 +340,7 @@ public class CarInfoActivity extends AppCompatActivity {
         button.setOnClickListener(view -> {
             distanceDriven = Integer.parseInt(distance.getText().toString());
             dialog.dismiss();
-            updateFluids();
+            calculateAmountRemaining();
         });
     }
 
