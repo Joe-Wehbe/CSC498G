@@ -99,8 +99,6 @@ public class CarInfoActivity extends AppCompatActivity {
 
         builder = new AlertDialog.Builder(this);
 
-
-
         getCarInfo();
         getCarFluids();
 
