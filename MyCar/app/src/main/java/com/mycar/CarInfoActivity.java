@@ -155,32 +155,24 @@ public class CarInfoActivity extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
-    public void refill(String fluidDBname, String fluid){
+    public void refill(String fluidDB, String fluid){
 
         String URL = baseURL + "refill.php";
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, response -> {
 
-                if(response.trim().equals("success")){
-                    Toast.makeText(CarInfoActivity.this, fluid + " refilled", Toast.LENGTH_SHORT).show();
-                }
-                if(response.trim().equals("failure")){
-                    Toast.makeText(CarInfoActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
-                }
+            if(response.trim().equals("success")){
+                Toast.makeText(CarInfoActivity.this, fluid + " refilled", Toast.LENGTH_SHORT).show();
             }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), error.toString().trim(), Toast.LENGTH_SHORT).show();
+            if(response.trim().equals("failure")){
+                Toast.makeText(CarInfoActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
             }
-        }){
+        }, error -> Toast.makeText(getApplicationContext(), error.toString().trim(), Toast.LENGTH_SHORT).show()){
             @Nullable
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> data = new HashMap<>();
-                data.put("column", fluidDBname);
+                data.put("column", fluidDB);
                 data.put("user_id", id);
                 data.put("car_id", car_id);
 
@@ -201,7 +193,7 @@ public class CarInfoActivity extends AppCompatActivity {
                     .setPositiveButton("Yes", (dialogInterface, i) -> {
                         pbEo.setProgress(100);
                         tvEo.setText(pbEo.getProgress() + "%");
-                        refill("engine_coolant", "Engine coolant");
+                        refill("engine_oil", "Engine oil");
                     })
                     .setNegativeButton("No", (dialogInterface, i12) -> dialogInterface.cancel()).show();
         }
@@ -216,7 +208,7 @@ public class CarInfoActivity extends AppCompatActivity {
                     .setPositiveButton("Yes", (dialogInterface, i) -> {
                         pbEc.setProgress(100);
                         tvEc.setText(pbEc.getProgress() + "%");
-                        refill("engine_oil", "Engine oil");
+                        refill("engine_coolant", "Engine coolant");
                     })
                     .setNegativeButton("No", (dialogInterface, i12) -> dialogInterface.cancel()).show();
         }
