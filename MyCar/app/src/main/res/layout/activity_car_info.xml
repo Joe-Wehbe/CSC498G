@@ -8,25 +8,33 @@
     tools:context=".CarInfoActivity">
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
-        android:text="Fluids"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="4dp"
+        android:text="________________________"
         android:textColor="#FFFFFF"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/textView10"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toEndOf="@+id/textView12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="96dp"
+        android:text="________________________"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
         android:id="@+id/eo"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="156dp"
         android:indeterminateOnly="false"
 
         android:progressDrawable="@drawable/circle"
@@ -34,84 +42,40 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:progress="60" />
 
-    <ProgressBar
-        android:id="@+id/psf"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="380dp"
-        android:indeterminateOnly="false"
-
-        android:progressDrawable="@drawable/circle"
-        app:layout_constraintStart_toEndOf="@+id/tf"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:progress="60" />
-
     <TextView
-        android:id="@+id/bf_progress"
+        android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="5dp"
+        android:text="Engine Oil"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/eo"
+        app:layout_constraintEnd_toEndOf="@+id/eo"
+        app:layout_constraintStart_toStartOf="@+id/eo" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Engine Coolant"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/ec"
+        app:layout_constraintEnd_toEndOf="@+id/ec"
+        app:layout_constraintStart_toStartOf="@+id/ec" />
+
+    <TextView
+        android:id="@+id/ec_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="60%"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/bf"
-        app:layout_constraintEnd_toEndOf="@+id/bf"
-        app:layout_constraintHorizontal_bias="0.544"
-        app:layout_constraintStart_toStartOf="@+id/bf"
-        app:layout_constraintTop_toTopOf="@+id/bf"
-        app:layout_constraintVertical_bias="0.444">
+        app:layout_constraintBottom_toBottomOf="@+id/ec"
+        app:layout_constraintEnd_toEndOf="@+id/ec"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="@+id/ec"
+        app:layout_constraintTop_toTopOf="@+id/ec"
+        app:layout_constraintVertical_bias="0.53">
 
     </TextView>
-
-    <Button
-        android:id="@+id/Rbutton4"
-        android:layout_width="88dp"
-        android:layout_height="48dp"
-        android:backgroundTint="#3DBD19"
-        android:onClick="refillPsf"
-        android:text="Refill"
-        app:layout_constraintEnd_toEndOf="@+id/psf"
-        app:layout_constraintHorizontal_bias="0.833"
-        app:layout_constraintStart_toStartOf="@+id/psf"
-        app:layout_constraintTop_toBottomOf="@+id/psf" />
-
-    <ProgressBar
-        android:id="@+id/tf"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="380dp"
-        android:indeterminateOnly="false"
-        android:progressDrawable="@drawable/circle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:progress="60" />
-
-    <ProgressBar
-        android:id="@+id/bf"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="380dp"
-
-        android:indeterminateOnly="false"
-        android:progressDrawable="@drawable/circle"
-        app:layout_constraintStart_toEndOf="@+id/psf"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:progress="60" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Transmission"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/tf"
-        app:layout_constraintEnd_toEndOf="@+id/tf"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="@+id/tf" />
 
     <TextView
         android:id="@+id/eo_progress"
@@ -121,12 +85,100 @@
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/eo"
         app:layout_constraintEnd_toEndOf="@+id/eo"
-        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="@+id/eo"
         app:layout_constraintTop_toTopOf="@+id/eo"
-        app:layout_constraintVertical_bias="0.506">
+        app:layout_constraintVertical_bias="0.53">
 
     </TextView>
+
+    <Button
+        android:id="@+id/Rbutton"
+        android:layout_width="88dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#3DBD19"
+        android:onClick="refillEo"
+        android:text="Refill"
+        app:layout_constraintEnd_toEndOf="@+id/eo"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="@+id/eo"
+        app:layout_constraintTop_toBottomOf="@+id/eo" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:text="Fluids"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView10"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toEndOf="@+id/textView12"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/ec"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="156dp"
+
+        android:indeterminateOnly="false"
+        android:progressDrawable="@drawable/circle"
+        app:layout_constraintStart_toEndOf="@+id/eo"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:progress="60" />
+
+    <Button
+        android:id="@+id/Rbutton2"
+        android:layout_width="88dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#3DBD19"
+        android:onClick="refillEc"
+        android:text="Refill"
+        app:layout_constraintEnd_toEndOf="@+id/ec"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="@+id/ec"
+        app:layout_constraintTop_toBottomOf="@+id/ec" />
+
+    <ProgressBar
+        android:id="@+id/psf"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="344dp"
+        android:indeterminateOnly="false"
+
+        android:progressDrawable="@drawable/circle"
+        app:layout_constraintStart_toEndOf="@+id/tf"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:progress="60" />
+
+    <Button
+        android:id="@+id/Rbutton4"
+        android:layout_width="88dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#3DBD19"
+        android:onClick="refillPsf"
+        android:text="Refill"
+        app:layout_constraintEnd_toEndOf="@+id/psf"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="@+id/psf"
+        app:layout_constraintTop_toBottomOf="@+id/psf" />
+
+    <ProgressBar
+        android:id="@+id/tf"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="344dp"
+        android:indeterminateOnly="false"
+        android:progressDrawable="@drawable/circle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:progress="60" />
 
     <TextView
         android:id="@+id/psf_progress"
@@ -137,36 +189,47 @@
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/psf"
         app:layout_constraintEnd_toEndOf="@+id/psf"
-        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="@+id/psf"
         app:layout_constraintTop_toTopOf="@+id/psf"
-        app:layout_constraintVertical_bias="0.555">
+        app:layout_constraintVertical_bias="0.493">
 
     </TextView>
 
     <Button
-        android:id="@+id/Rbutton2"
+        android:id="@+id/Rbutton5"
         android:layout_width="88dp"
         android:layout_height="48dp"
         android:backgroundTint="#3DBD19"
-        android:onClick="refillEc"
+        android:onClick="refillBf"
         android:text="Refill"
-        app:layout_constraintEnd_toEndOf="@+id/ec"
-        app:layout_constraintHorizontal_bias="0.833"
-        app:layout_constraintStart_toStartOf="@+id/ec"
-        app:layout_constraintTop_toBottomOf="@+id/ec" />
+        app:layout_constraintEnd_toEndOf="@+id/bf"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="@+id/bf"
+        app:layout_constraintTop_toBottomOf="@+id/bf" />
 
     <Button
-        android:id="@+id/Rbutton"
+        android:id="@+id/Rbutton3"
         android:layout_width="88dp"
         android:layout_height="48dp"
         android:backgroundTint="#3DBD19"
-        android:onClick="refillEo"
+        android:onClick="refillTf"
         android:text="Refill"
-        app:layout_constraintEnd_toEndOf="@+id/eo"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="@+id/eo"
-        app:layout_constraintTop_toBottomOf="@+id/eo" />
+        app:layout_constraintEnd_toEndOf="@+id/tf"
+        app:layout_constraintHorizontal_bias="0.583"
+        app:layout_constraintStart_toStartOf="@+id/tf"
+        app:layout_constraintTop_toBottomOf="@+id/tf" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Transmission"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/tf"
+        app:layout_constraintEnd_toEndOf="@+id/tf"
+        app:layout_constraintHorizontal_bias="0.437"
+        app:layout_constraintStart_toStartOf="@+id/tf" />
 
     <TextView
         android:id="@+id/tf_progress"
@@ -177,12 +240,68 @@
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/tf"
         app:layout_constraintEnd_toEndOf="@+id/tf"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="@+id/tf"
         app:layout_constraintTop_toTopOf="@+id/tf"
-        app:layout_constraintVertical_bias="0.555">
+        app:layout_constraintVertical_bias="0.506">
 
     </TextView>
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="221dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#A39898"
+        android:onClick="removeCar"
+        android:text="Remove Car"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button6" />
+
+    <TextView
+        android:id="@+id/bf_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="5dp"
+        android:text="60%"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/bf"
+        app:layout_constraintEnd_toEndOf="@+id/bf"
+        app:layout_constraintHorizontal_bias="0.421"
+        app:layout_constraintStart_toStartOf="@+id/bf"
+        app:layout_constraintTop_toTopOf="@+id/bf"
+        app:layout_constraintVertical_bias="0.506">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Breaks Fluid"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/bf"
+        app:layout_constraintEnd_toEndOf="@+id/bf"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="@+id/bf" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="221dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#A39898"
+        android:onClick="addNewDistance"
+        android:text="New Distance Driven"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Rbutton4" />
 
     <TextView
         android:id="@+id/textView9"
@@ -196,89 +315,30 @@
         app:layout_constraintStart_toStartOf="@+id/psf" />
 
     <Button
-        android:id="@+id/Rbutton5"
-        android:layout_width="88dp"
-        android:layout_height="48dp"
-        android:backgroundTint="#3DBD19"
-        android:onClick="refillBf"
-        android:text="Refill"
-        app:layout_constraintEnd_toEndOf="@+id/bf"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="@+id/bf"
-        app:layout_constraintTop_toBottomOf="@+id/bf" />
+        android:id="@+id/button"
+        android:layout_width="221dp"
+        android:layout_height="52dp"
+        android:backgroundTint="#A39898"
+        android:onClick="goToMoreInfo"
+        android:text="More Info"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button7" />
 
     <ProgressBar
-        android:id="@+id/ec"
+        android:id="@+id/bf"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="180dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="344dp"
 
         android:indeterminateOnly="false"
         android:progressDrawable="@drawable/circle"
-        app:layout_constraintStart_toEndOf="@+id/eo"
+        app:layout_constraintStart_toEndOf="@+id/psf"
         app:layout_constraintTop_toTopOf="parent"
         tools:progress="60" />
-
-    <TextView
-        android:id="@+id/ec_progress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="60%"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/ec"
-        app:layout_constraintEnd_toEndOf="@+id/ec"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="@+id/ec"
-        app:layout_constraintTop_toTopOf="@+id/ec"
-        app:layout_constraintVertical_bias="0.506">
-
-    </TextView>
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Breaks Fluid"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/bf"
-        app:layout_constraintEnd_toEndOf="@+id/bf"
-        app:layout_constraintHorizontal_bias="0.526"
-        app:layout_constraintStart_toStartOf="@+id/bf" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Engine Oil"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/eo"
-        app:layout_constraintEnd_toEndOf="@+id/eo"
-        app:layout_constraintHorizontal_bias="0.567"
-        app:layout_constraintStart_toStartOf="@+id/eo" />
-
-    <Button
-        android:id="@+id/Rbutton3"
-        android:layout_width="88dp"
-        android:layout_height="48dp"
-        android:backgroundTint="#3DBD19"
-        android:onClick="refillTf"
-        android:text="Refill"
-        app:layout_constraintEnd_toEndOf="@+id/tf"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="@+id/tf"
-        app:layout_constraintTop_toBottomOf="@+id/tf" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Engine Coolant"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/ec"
-        app:layout_constraintEnd_toEndOf="@+id/ec"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/ec" />
 
     <TextView
         android:id="@+id/textView2"
@@ -318,17 +378,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="112dp"
-        android:text="________________________"
-        android:textColor="#FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -339,17 +388,6 @@
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
-        android:layout_marginEnd="4dp"
-        android:text="________________________"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -397,32 +435,5 @@
         app:layout_constraintEnd_toEndOf="@+id/textView5"
         app:layout_constraintStart_toStartOf="@+id/textView5"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
-
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="221dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="28dp"
-        android:backgroundTint="#A39898"
-        android:onClick="addNewDistance"
-        android:text="New Distance Driven"
-        android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Rbutton4" />
-
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="221dp"
-        android:layout_height="52dp"
-        android:backgroundTint="#A39898"
-        android:onClick="goToMoreInfo"
-        android:text="More Info"
-        android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

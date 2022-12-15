@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
@@ -54,6 +55,7 @@ public class CarInfoActivity extends AppCompatActivity {
     private static String baseURL = "http://192.168.1.101/MyCar/";
     private String id;
     private String car_id;
+    private String brand;
 
     AlertDialog.Builder builder;
     AlertDialog.Builder builder1;
@@ -73,7 +75,7 @@ public class CarInfoActivity extends AppCompatActivity {
         getWindow().setStatusBarColor(ContextCompat.getColor(getApplicationContext(), R.color.black));
 
         Intent intent = getIntent();
-        String brand = intent.getStringExtra("carBrand");
+        brand = intent.getStringExtra("carBrand");
         id = intent.getStringExtra("user_id");
         car_id = intent.getStringExtra("car_id");
 
@@ -342,6 +344,44 @@ public class CarInfoActivity extends AppCompatActivity {
             dialog.dismiss();
             calculateAmountRemaining();
         });
+    }
+
+    public void deleteCar(){
+
+        String URL = baseURL + "deleteCar.php";
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, response -> {
+
+            if(response.trim().equals("success")){
+                Toast.makeText(CarInfoActivity.this, "Car removed", Toast.LENGTH_SHORT).show();
+            }
+            if(response.trim().equals("failure")){
+                Toast.makeText(CarInfoActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+            }
+        }, error -> Toast.makeText(getApplicationContext(), error.toString().trim(), Toast.LENGTH_SHORT).show()){
+            @Nullable
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> data = new HashMap<>();
+                data.put("car_id", car_id);
+                return data;
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        requestQueue.add(stringRequest);
+    }
+
+    public void removeCar(View v){
+        builder.setTitle("Remove " + brand)
+                .setMessage("Are you sure you want to remove this car?")
+                .setCancelable(true)
+                .setPositiveButton("Yes", (dialogInterface, i) -> {
+                    deleteCar();
+                    Intent intent = new Intent(CarInfoActivity.this, UserCarsActivity.class);
+                    intent.putExtra("user_id", id);
+                    startActivity(intent);
+                })
+                .setNegativeButton("No", (dialogInterface, i12) -> dialogInterface.cancel()).show();
     }
 
     public void goToMoreInfo(View v){
