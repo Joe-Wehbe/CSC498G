@@ -271,7 +271,15 @@ public class CarInfoActivity extends AppCompatActivity {
         }
     }
 
-    public void goToAddDistance(View v){
+    public void updateFluids(){
+        pbEo.setProgress(pbEo.getProgress() - 100*(distanceDriven/7500));
+        pbEc.setProgress(pbEc.getProgress() - 100*(distanceDriven/30000));
+        pbTf.setProgress(pbTf.getProgress() - 100*(distanceDriven/45000));
+        pbPsf.setProgress(pbPsf.getProgress() - 100*(distanceDriven/60000));
+        pbBf.setProgress(pbBf.getProgress() - 100*(distanceDriven/30000));
+    }
+
+    public void addNewDistance(View v){
 
         builder1 = new AlertDialog.Builder(this);
         view = getLayoutInflater().inflate(androidx.customview.R.layout.custom_dialog, null);
@@ -284,6 +292,7 @@ public class CarInfoActivity extends AppCompatActivity {
         button.setOnClickListener(view -> {
             distanceDriven = Integer.parseInt(distance.getText().toString());
             dialog.dismiss();
+            updateFluids();
         });
 
     }

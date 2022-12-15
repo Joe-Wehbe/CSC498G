@@ -404,7 +404,7 @@
         android:layout_height="52dp"
         android:layout_marginTop="28dp"
         android:backgroundTint="#A39898"
-        android:onClick="goToAddDistance"
+        android:onClick="addNewDistance"
         android:text="New Distance Driven"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
