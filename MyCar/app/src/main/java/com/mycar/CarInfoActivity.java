@@ -155,41 +155,42 @@ public class CarInfoActivity extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
-//    public void refill(String fluidDBname, String fluid){
-//
-//        String URL = baseURL + "refill.php";
-//
-//        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
-//            @Override
-//            public void onResponse(String response) {
-//
-//                if(response.trim().equals("success")){
-//                    Toast.makeText(CarInfoActivity.this, fluid + "refilled", Toast.LENGTH_SHORT).show();
-//                }
-//                if(response.trim().equals("failure")){
-//                    Toast.makeText(CarInfoActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        }, new Response.ErrorListener() {
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//                Toast.makeText(getApplicationContext(), error.toString().trim(), Toast.LENGTH_SHORT).show();
-//            }
-//        }){
-//            @Nullable
-//            @Override
-//            protected Map<String, String> getParams() throws AuthFailureError {
-//                Map<String, String> data = new HashMap<>();
-//                data.put("column", fluidDBname);
-//                data.put("user_id", last_name);
-//
-//                return data;
-//            }
-//        };
-//        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-//        requestQueue.add(stringRequest);
-//
-//    }
+    public void refill(String fluidDBname, String fluid){
+
+        String URL = baseURL + "refill.php";
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                if(response.trim().equals("success")){
+                    Toast.makeText(CarInfoActivity.this, fluid + " refilled", Toast.LENGTH_SHORT).show();
+                }
+                if(response.trim().equals("failure")){
+                    Toast.makeText(CarInfoActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(), error.toString().trim(), Toast.LENGTH_SHORT).show();
+            }
+        }){
+            @Nullable
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> data = new HashMap<>();
+                data.put("column", fluidDBname);
+                data.put("user_id", id);
+                data.put("car_id", car_id);
+
+                return data;
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        requestQueue.add(stringRequest);
+
+    }
 
     @SuppressLint("SetTextI18n")
     public void refillEo(View view) {
@@ -200,6 +201,7 @@ public class CarInfoActivity extends AppCompatActivity {
                     .setPositiveButton("Yes", (dialogInterface, i) -> {
                         pbEo.setProgress(100);
                         tvEo.setText(pbEo.getProgress() + "%");
+                        refill("engine_coolant", "Engine coolant");
                     })
                     .setNegativeButton("No", (dialogInterface, i12) -> dialogInterface.cancel()).show();
         }
@@ -214,6 +216,7 @@ public class CarInfoActivity extends AppCompatActivity {
                     .setPositiveButton("Yes", (dialogInterface, i) -> {
                         pbEc.setProgress(100);
                         tvEc.setText(pbEc.getProgress() + "%");
+                        refill("engine_oil", "Engine oil");
                     })
                     .setNegativeButton("No", (dialogInterface, i12) -> dialogInterface.cancel()).show();
         }
@@ -228,6 +231,7 @@ public class CarInfoActivity extends AppCompatActivity {
                     .setPositiveButton("Yes", (dialogInterface, i) -> {
                         pbTf.setProgress(100);
                         tvTf.setText(pbTf.getProgress() + "%");
+                        refill("transmission_fluid", "Transmission fluid");
                     })
                     .setNegativeButton("No", (dialogInterface, i12) -> dialogInterface.cancel()).show();
 
@@ -243,6 +247,7 @@ public class CarInfoActivity extends AppCompatActivity {
                     .setPositiveButton("Yes", (dialogInterface, i) -> {
                         pbPsf.setProgress(100);
                         tvPsf.setText(pbPsf.getProgress() + "%");
+                        refill("power_steering_fluid", "Power steering fluid");
                     })
                     .setNegativeButton("No", (dialogInterface, i12) -> dialogInterface.cancel()).show();
 
@@ -251,14 +256,17 @@ public class CarInfoActivity extends AppCompatActivity {
 
     @SuppressLint("SetTextI18n")
     public void refillBf(View view) {
-        builder.setTitle("Refill Breaks Fluid")
-                .setMessage("Are you sure you want to refill the breaks fluid?")
-                .setCancelable(true)
-                .setPositiveButton("Yes", (dialogInterface, i) -> {
-                    pbBf.setProgress(100);
-                    tvBf.setText(pbBf.getProgress() + "%");
-                })
-                .setNegativeButton("No", (dialogInterface, i12) -> dialogInterface.cancel()).show();
+        if(pbBf.getProgress() < 100){
+            builder.setTitle("Refill Breaks Fluid")
+                    .setMessage("Are you sure you want to refill the breaks fluid?")
+                    .setCancelable(true)
+                    .setPositiveButton("Yes", (dialogInterface, i) -> {
+                        pbBf.setProgress(100);
+                        tvBf.setText(pbBf.getProgress() + "%");
+                        refill("breaks_fluid", "Breaks fluid");
+                    })
+                    .setNegativeButton("No", (dialogInterface, i12) -> dialogInterface.cancel()).show();
+        }
     }
 
     public void goToAddDistance(View v){
