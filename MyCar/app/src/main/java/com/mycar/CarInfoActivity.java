@@ -271,12 +271,23 @@ public class CarInfoActivity extends AppCompatActivity {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     public void updateFluids(){
-        pbEo.setProgress(pbEo.getProgress() - 100*(distanceDriven/7500));
-        pbEc.setProgress(pbEc.getProgress() - 100*(distanceDriven/30000));
-        pbTf.setProgress(pbTf.getProgress() - 100*(distanceDriven/45000));
-        pbPsf.setProgress(pbPsf.getProgress() - 100*(distanceDriven/60000));
-        pbBf.setProgress(pbBf.getProgress() - 100*(distanceDriven/30000));
+
+        pbEo.setProgress(pbEo.getProgress() - 100 * distanceDriven/7500);
+        tvEo.setText(pbEo.getProgress() + "%");
+
+        pbEc.setProgress(pbEc.getProgress() - 100 * distanceDriven/30000);
+        tvEc.setText(pbEc.getProgress() + "%");
+
+        pbTf.setProgress(pbTf.getProgress() - 100 * distanceDriven/45000);
+        tvTf.setText(pbTf.getProgress() + "%");
+
+        pbPsf.setProgress(pbPsf.getProgress() - 100 * distanceDriven/60000);
+        tvPsf.setText(pbPsf.getProgress() + "%");
+
+        pbBf.setProgress(pbBf.getProgress() - 100 * distanceDriven/30000);
+        tvBf.setText(pbBf.getProgress() + "%");
     }
 
     public void addNewDistance(View v){
@@ -294,7 +305,6 @@ public class CarInfoActivity extends AppCompatActivity {
             dialog.dismiss();
             updateFluids();
         });
-
     }
 
     public void goToMoreInfo(View v){
