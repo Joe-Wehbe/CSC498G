@@ -44,13 +44,7 @@ public class CarInfoActivity extends AppCompatActivity {
     private TextView tvModel;
     private TextView tvPlate;
 
-    private Button btn;
-    private Button btn2;
-    private Button btn3;
-    private Button btn4;
-    private Button btn5;
-
-    private static String baseURL = "http://192.168.1.105/MyCar/";
+    private static String baseURL = "http://192.168.1.101/MyCar/";
     private String id;
 
     AlertDialog.Builder builder;
@@ -86,12 +80,6 @@ public class CarInfoActivity extends AppCompatActivity {
         tvModel = findViewById(R.id.tv_model);
         tvColor = findViewById(R.id.tv_color);
         tvPlate = findViewById(R.id.tv_plate);
-
-        btn = findViewById(R.id.Rbutton);
-        btn2 = findViewById(R.id.Rbutton2);
-        btn3 = findViewById(R.id.Rbutton3);
-        btn4 = findViewById(R.id.Rbutton4);
-        btn5 = findViewById(R.id.Rbutton5);
 
         builder = new AlertDialog.Builder(this);
 
@@ -165,11 +153,11 @@ public class CarInfoActivity extends AppCompatActivity {
             builder.setTitle("Refill Engine Oil")
                     .setMessage("Are you sure you want to refill the engine oil?")
                     .setCancelable(true)
-                    .setPositiveButton("Yes", (dialogInterface, i1) -> finish())
+                    .setPositiveButton("Yes", (dialogInterface, i) -> {
+                        pbEo.setProgress(100);
+                        tvEo.setText(pbEo.getProgress() + "%");
+                    })
                     .setNegativeButton("No", (dialogInterface, i12) -> dialogInterface.cancel()).show();
-
-            pbEo.setProgress(100);
-            tvEo.setText(pbEo.getProgress() + "%");
         }
     }
 
@@ -177,34 +165,28 @@ public class CarInfoActivity extends AppCompatActivity {
     public void refillEc(View view) {
         if (pbEc.getProgress() < 100){
             builder.setTitle("Refill Engine Coolant")
-                    .setMessage("Are you sure you want to refill the engine coolant?")
+                    .setMessage("Are you sure you want to refill the engine coolant fluid?")
                     .setCancelable(true)
-                    .setPositiveButton("Yes", (dialogInterface, i1) -> finish())
+                    .setPositiveButton("Yes", (dialogInterface, i) -> {
+                        pbEc.setProgress(100);
+                        tvEc.setText(pbEc.getProgress() + "%");
+                    })
                     .setNegativeButton("No", (dialogInterface, i12) -> dialogInterface.cancel()).show();
-            pbEc.setProgress(100);
-            tvEc.setText(pbEc.getProgress() + "%");
         }
     }
 
     @SuppressLint("SetTextI18n")
     public void refillTf(View view) {
         if (pbTf.getProgress() < 100){
-            btn3.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    builder.setTitle("Refill Transmission Fluid")
-                            .setMessage("Are you sure you want to refill the transmission fluid?")
-                            .setCancelable(true)
-                            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
-                                    pbPsf.setProgress(100);
-                                    tvPsf.setText(pbPsf.getProgress() + "%");
-                                }
-                            })
-                            .setNegativeButton("No", (dialogInterface, i12) -> dialogInterface.cancel()).show();
-                }
-            });
+            builder.setTitle("Refill Transmission Fluid")
+                    .setMessage("Are you sure you want to refill the transmission fluid?")
+                    .setCancelable(true)
+                    .setPositiveButton("Yes", (dialogInterface, i) -> {
+                        pbTf.setProgress(100);
+                        tvTf.setText(pbTf.getProgress() + "%");
+                    })
+                    .setNegativeButton("No", (dialogInterface, i12) -> dialogInterface.cancel()).show();
+
         }
     }
 
@@ -214,13 +196,9 @@ public class CarInfoActivity extends AppCompatActivity {
             builder.setTitle("Refill Power Steering Fluid")
                     .setMessage("Are you sure you want to refill the power steering fluid?")
                     .setCancelable(true)
-                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            pbPsf.setProgress(100);
-                            tvPsf.setText(pbPsf.getProgress() + "%");
-                            finish();
-                        }
+                    .setPositiveButton("Yes", (dialogInterface, i) -> {
+                        pbPsf.setProgress(100);
+                        tvPsf.setText(pbPsf.getProgress() + "%");
                     })
                     .setNegativeButton("No", (dialogInterface, i12) -> dialogInterface.cancel()).show();
 
@@ -229,15 +207,14 @@ public class CarInfoActivity extends AppCompatActivity {
 
     @SuppressLint("SetTextI18n")
     public void refillBf(View view) {
-        if (pbBf.getProgress() < 100){
-            builder.setTitle("Refill Breaks Fluid")
-                    .setMessage("Are you sure you want to refill the breaks fluid?")
-                    .setCancelable(true)
-                    .setPositiveButton("Yes", (dialogInterface, i1) -> finish())
-                    .setNegativeButton("No", (dialogInterface, i12) -> dialogInterface.cancel()).show();
-        }
-        pbBf.setProgress(100);
-        tvBf.setText(pbBf.getProgress() + "%");
+        builder.setTitle("Refill Breaks Fluid")
+                .setMessage("Are you sure you want to refill the breaks fluid?")
+                .setCancelable(true)
+                .setPositiveButton("Yes", (dialogInterface, i) -> {
+                    pbBf.setProgress(100);
+                    tvBf.setText(pbBf.getProgress() + "%");
+                })
+                .setNegativeButton("No", (dialogInterface, i12) -> dialogInterface.cancel()).show();
     }
 
     public void goToAddDistance(View v){

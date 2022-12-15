@@ -28,7 +28,7 @@ public class AddCarActivity extends AppCompatActivity {
     private EditText etBrand, etModel, etColor, etPlate;
     private String brand, model, color, plate;
 
-    private String URL = "http://192.168.1.105/MyCar/addCar.php";
+    private String URL = "http://192.168.1.101/MyCar/addCar.php";
     String id;
 
     @Override
