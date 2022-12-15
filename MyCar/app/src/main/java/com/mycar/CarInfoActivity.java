@@ -1,5 +1,6 @@
 package com.mycar;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -15,14 +16,19 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 public class CarInfoActivity extends AppCompatActivity {
@@ -46,6 +52,7 @@ public class CarInfoActivity extends AppCompatActivity {
 
     private static String baseURL = "http://192.168.1.101/MyCar/";
     private String id;
+    private String car_id;
 
     AlertDialog.Builder builder;
 
@@ -60,6 +67,7 @@ public class CarInfoActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String brand = intent.getStringExtra("carBrand");
         id = intent.getStringExtra("user_id");
+        car_id = intent.getStringExtra("car_id");
 
         Objects.requireNonNull(getSupportActionBar()).setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.background)));
         getSupportActionBar().setTitle(brand);
@@ -89,7 +97,7 @@ public class CarInfoActivity extends AppCompatActivity {
     }
 
     public void getCarInfo(){
-        String URL = String.format(baseURL + "getCarInfo.php?id=%1$s", id);
+        String URL = String.format(baseURL + "getCarInfo.php?id=%1$s&car_id=%2$s", id, car_id);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL,
                 response -> {
 
@@ -115,7 +123,7 @@ public class CarInfoActivity extends AppCompatActivity {
     }
 
     public void getCarFluids(){
-        String URL = String.format(baseURL + "getCarFluids.php?id=%1$s", id);
+        String URL = String.format(baseURL + "getCarFluids.php?id=%1$s&car_id=%2$s", id, car_id);
         @SuppressLint("SetTextI18n") StringRequest stringRequest = new StringRequest(Request.Method.GET, URL,
                 response -> {
 
@@ -146,6 +154,42 @@ public class CarInfoActivity extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         requestQueue.add(stringRequest);
     }
+
+//    public void refill(String fluidDBname, String fluid){
+//
+//        String URL = baseURL + "refill.php";
+//
+//        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+//            @Override
+//            public void onResponse(String response) {
+//
+//                if(response.trim().equals("success")){
+//                    Toast.makeText(CarInfoActivity.this, fluid + "refilled", Toast.LENGTH_SHORT).show();
+//                }
+//                if(response.trim().equals("failure")){
+//                    Toast.makeText(CarInfoActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                Toast.makeText(getApplicationContext(), error.toString().trim(), Toast.LENGTH_SHORT).show();
+//            }
+//        }){
+//            @Nullable
+//            @Override
+//            protected Map<String, String> getParams() throws AuthFailureError {
+//                Map<String, String> data = new HashMap<>();
+//                data.put("column", fluidDBname);
+//                data.put("user_id", last_name);
+//
+//                return data;
+//            }
+//        };
+//        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+//        requestQueue.add(stringRequest);
+//
+//    }
 
     @SuppressLint("SetTextI18n")
     public void refillEo(View view) {

@@ -30,6 +30,7 @@ public class UserCarsActivity extends AppCompatActivity {
     String brand;
     String plate;
     String id;
+    int car_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +56,8 @@ public class UserCarsActivity extends AppCompatActivity {
         String URL = String.format(baseURL + "getUserCars.php?id=%1$s", id);
 
         ArrayList<Car> arrayList = new ArrayList<>();
+        ArrayList<Integer> carIDs = new ArrayList<>();
+
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL,
             new Response.Listener<String>() {
                 @Override
@@ -67,8 +70,11 @@ public class UserCarsActivity extends AppCompatActivity {
 
                             brand = object.getString("brand");
                             plate = object.getString("plate") ;
+                            car_id = object.getInt("id");
 
                             arrayList.add(new Car(brand, plate));
+                            carIDs.add(car_id);
+
                         }
 
                     }catch (Exception e){
@@ -78,9 +84,11 @@ public class UserCarsActivity extends AppCompatActivity {
                     listView.setAdapter((ListAdapter) CarAdapter);
 
                     listView.setOnItemClickListener((adapterView, view, i, l) -> {
+
                         Intent intent1 = new Intent(getApplicationContext(), CarInfoActivity.class);
                         intent1.putExtra("carBrand", arrayList.get(i).getBrand());
                         intent1.putExtra("user_id", id);
+                        intent1.putExtra("car_id", Integer.toString(Integer.parseInt(carIDs.get(i).toString())));
                         startActivity(intent1);
                     });
                 }
