@@ -12,6 +12,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -55,6 +56,13 @@ public class CarInfoActivity extends AppCompatActivity {
     private String car_id;
 
     AlertDialog.Builder builder;
+    AlertDialog.Builder builder1;
+    AlertDialog dialog;
+
+    EditText distance;
+    Button button;
+    int distanceDriven;
+    View view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,6 +98,8 @@ public class CarInfoActivity extends AppCompatActivity {
         tvPlate = findViewById(R.id.tv_plate);
 
         builder = new AlertDialog.Builder(this);
+
+
 
         getCarInfo();
         getCarFluids();
@@ -262,8 +272,20 @@ public class CarInfoActivity extends AppCompatActivity {
     }
 
     public void goToAddDistance(View v){
-        Intent intent = new Intent(CarInfoActivity.this, AddDistanceActivity.class);
-        startActivity(intent);
+
+        builder1 = new AlertDialog.Builder(this);
+        view = getLayoutInflater().inflate(androidx.customview.R.layout.custom_dialog, null);
+        distance = view.findViewById(R.id.distance);
+        button = view.findViewById(R.id.addDistanceBtn);
+        builder1.setView(view);
+        dialog = builder1.create();
+        dialog.show();
+
+        button.setOnClickListener(view -> {
+            distanceDriven = Integer.parseInt(distance.getText().toString());
+            dialog.dismiss();
+        });
+
     }
 
     public void goToMoreInfo(View v){

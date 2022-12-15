@@ -87,7 +87,7 @@ public class SignUpActivity extends AppCompatActivity {
             }, error -> Toast.makeText(getApplicationContext(), error.toString().trim(), Toast.LENGTH_SHORT).show()){
                 @Nullable
                 @Override
-                protected Map<String, String> getParams() throws AuthFailureError {
+                protected Map<String, String> getParams() {
                     Map<String, String> data = new HashMap<>();
                     data.put("first_name", first_name);
                     data.put("last_name", last_name);
@@ -105,7 +105,4 @@ public class SignUpActivity extends AppCompatActivity {
         }
 
     }
-
-
-
 }
