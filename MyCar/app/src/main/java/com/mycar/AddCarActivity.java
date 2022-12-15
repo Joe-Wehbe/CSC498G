@@ -11,11 +11,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -29,7 +26,7 @@ public class AddCarActivity extends AppCompatActivity {
     private String brand, model, color, plate;
 
     private String URL = "http://192.168.1.101/MyCar/addCar.php";
-    String id;
+    private String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,30 +55,21 @@ public class AddCarActivity extends AppCompatActivity {
         plate = etPlate.getText().toString().trim();
 
         if(!brand.equals("") && !model.equals("") && !color.equals("") && !plate.equals("")){
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, response -> {
 
-            StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
-                @Override
-                public void onResponse(String response) {
-
-                    if (response.trim().equals("success")) {
-                        Intent intent = new Intent(AddCarActivity.this, UserCarsActivity.class);
-                        intent.putExtra("user_id", id);
-                        startActivity(intent);
-
-                    } else if(response.trim().equals("exists")){
-                        Toast.makeText(AddCarActivity.this, "This car is already registered", Toast.LENGTH_SHORT).show();
-                    }
-                    else{
-                        Toast.makeText(AddCarActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
-
-                    }
+                if (response.trim().equals("success")) {
+                    Intent intent = new Intent(AddCarActivity.this, UserCarsActivity.class);
+                    intent.putExtra("user_id", id);
+                    startActivity(intent);
                 }
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    Toast.makeText(getApplicationContext(), error.toString().trim(), Toast.LENGTH_SHORT).show();
+                else if(response.trim().equals("exists")){
+                    Toast.makeText(AddCarActivity.this, "This car is already registered", Toast.LENGTH_SHORT).show();
                 }
-            }){
+                else{
+                    Toast.makeText(AddCarActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                }
+            }, error -> Toast.makeText(getApplicationContext(), error.toString().trim(), Toast.LENGTH_SHORT).show()){
+
                 @Nullable
                 @Override
                 protected Map<String, String> getParams() {
@@ -100,6 +88,5 @@ public class AddCarActivity extends AppCompatActivity {
         }else{
             Toast.makeText(this, "Fields cannot be empty", Toast.LENGTH_SHORT).show();
         }
-
     }
 }

@@ -1,7 +1,5 @@
 package com.mycar;
 
-import android.provider.ContactsContract;
-
 public class Car {
 
     String brand;

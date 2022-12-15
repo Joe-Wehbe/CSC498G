@@ -10,8 +10,6 @@ import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,11 +26,12 @@ import java.util.Objects;
 public class SignInActivity extends AppCompatActivity {
 
     private final String URL = "http://192.168.1.101/MyCar/signIn.php";
+
     private EditText etEmail, etPassword;
     private String email, password;
+
     private int id;
     private int hasCar;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +52,6 @@ public class SignInActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.email_address1);
         etPassword = findViewById(R.id.password);
     }
-
 
     public void signIn(View view){
         email = etEmail.getText().toString().trim();
@@ -79,7 +77,6 @@ public class SignInActivity extends AppCompatActivity {
                     }
 
                 }catch (NumberFormatException e){
-
                     if(response.trim().equals("failure")) {
                         Toast.makeText(SignInActivity.this, "Invalid email or password", Toast.LENGTH_SHORT).show();
                     }
@@ -87,12 +84,10 @@ public class SignInActivity extends AppCompatActivity {
                         Toast.makeText(SignInActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
                     }
                 }
-
             }, error -> Toast.makeText(SignInActivity.this, error.toString().trim(), Toast.LENGTH_SHORT).show()){
                 @Nullable
                 @Override
                 protected Map<String, String> getParams() {
-
                     Map<String, String> data = new HashMap<>();
                     data.put("email", email);
                     data.put("password", password);
@@ -111,5 +106,4 @@ public class SignInActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
-
 }

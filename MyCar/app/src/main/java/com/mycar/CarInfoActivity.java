@@ -6,8 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -18,11 +16,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -68,7 +63,6 @@ public class CarInfoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_car_info);
 
@@ -103,30 +97,25 @@ public class CarInfoActivity extends AppCompatActivity {
 
         getCarInfo();
         getCarFluids();
-
     }
 
     public void getCarInfo(){
         String URL = String.format(baseURL + "getCarInfo.php?id=%1$s&car_id=%2$s", id, car_id);
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL,
-                response -> {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL, response -> {
+            try{
+                JSONArray array = new JSONArray(response);
+                for(int i = 0; i < array.length(); i++){
+                    JSONObject object = array.getJSONObject(i);
 
-                    try{
-                        JSONArray array = new JSONArray(response);
-                        for(int i = 0; i < array.length(); i++){
-                            JSONObject object = array.getJSONObject(i);
-
-                            tvBrand.setText(object.getString("brand").trim());
-                            tvModel.setText(object.getString("model").trim());
-                            tvColor.setText(object.getString("color").trim());
-                            tvPlate.setText(object.getString("plate").trim());
-
-                        }
-
-                    }catch (Exception e){
-                        e.printStackTrace();
-                    }
-                }, error -> Toast.makeText(CarInfoActivity.this, error.toString(), Toast.LENGTH_SHORT).show());
+                    tvBrand.setText(object.getString("brand").trim());
+                    tvModel.setText(object.getString("model").trim());
+                    tvColor.setText(object.getString("color").trim());
+                    tvPlate.setText(object.getString("plate").trim());
+                }
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }, error -> Toast.makeText(CarInfoActivity.this, error.toString(), Toast.LENGTH_SHORT).show());
 
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         requestQueue.add(stringRequest);
@@ -134,41 +123,35 @@ public class CarInfoActivity extends AppCompatActivity {
 
     public void getCarFluids(){
         String URL = String.format(baseURL + "getCarFluids.php?id=%1$s&car_id=%2$s", id, car_id);
-        @SuppressLint("SetTextI18n") StringRequest stringRequest = new StringRequest(Request.Method.GET, URL,
-                response -> {
+        @SuppressLint("SetTextI18n") StringRequest stringRequest = new StringRequest(Request.Method.GET, URL, response -> {
+            try{
+                JSONArray array = new JSONArray(response);
+                for(int i = 0; i < array.length(); i++){
+                    JSONObject object = array.getJSONObject(i);
 
-                    try{
-                        JSONArray array = new JSONArray(response);
-                        for(int i = 0; i < array.length(); i++){
-                            JSONObject object = array.getJSONObject(i);
+                    pbEo.setProgress(Integer.parseInt(object.getString("engine_oil").trim()));
+                    pbEc.setProgress(Integer.parseInt(object.getString("engine_coolant").trim()));
+                    pbTf.setProgress(Integer.parseInt(object.getString("transmission_fluid").trim()));
+                    pbPsf.setProgress(Integer.parseInt(object.getString("power_steering_fluid").trim()));
+                    pbBf.setProgress(Integer.parseInt(object.getString("breaks_fluid").trim()));
 
-                            pbEo.setProgress(Integer.parseInt(object.getString("engine_oil").trim()));
-                            pbEc.setProgress(Integer.parseInt(object.getString("engine_coolant").trim()));
-                            pbTf.setProgress(Integer.parseInt(object.getString("transmission_fluid").trim()));
-                            pbPsf.setProgress(Integer.parseInt(object.getString("power_steering_fluid").trim()));
-                            pbBf.setProgress(Integer.parseInt(object.getString("breaks_fluid").trim()));
-
-                            tvEo.setText(object.getString("engine_oil").trim() + "%");
-                            tvEc.setText(object.getString("engine_coolant").trim() + "%");
-                            tvTf.setText(object.getString("transmission_fluid").trim() + "%");
-                            tvPsf.setText(object.getString("power_steering_fluid").trim() + "%");
-                            tvBf.setText(object.getString("breaks_fluid").trim() + "%");
-
-                        }
-
-                    }catch (Exception e){
-                        e.printStackTrace();
-                    }
-                }, error -> Toast.makeText(CarInfoActivity.this, error.toString(), Toast.LENGTH_SHORT).show());
+                    tvEo.setText(object.getString("engine_oil").trim() + "%");
+                    tvEc.setText(object.getString("engine_coolant").trim() + "%");
+                    tvTf.setText(object.getString("transmission_fluid").trim() + "%");
+                    tvPsf.setText(object.getString("power_steering_fluid").trim() + "%");
+                    tvBf.setText(object.getString("breaks_fluid").trim() + "%");
+                }
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }, error -> Toast.makeText(CarInfoActivity.this, error.toString(), Toast.LENGTH_SHORT).show());
 
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         requestQueue.add(stringRequest);
     }
 
     public void refill(String fluidDB, String fluid){
-
         String URL = baseURL + "refill.php";
-
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, response -> {
 
             if(response.trim().equals("success")){
@@ -185,13 +168,11 @@ public class CarInfoActivity extends AppCompatActivity {
                 data.put("column", fluidDB);
                 data.put("user_id", id);
                 data.put("car_id", car_id);
-
                 return data;
             }
         };
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         requestQueue.add(stringRequest);
-
     }
 
     @SuppressLint("SetTextI18n")
@@ -272,9 +253,7 @@ public class CarInfoActivity extends AppCompatActivity {
     }
 
     public void updateFluids(String eo, String ec, String tf, String psf, String bf){
-
         String URL = baseURL + "updateFluids.php";
-
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, response -> {
 
             if(response.trim().equals("success")){
@@ -295,7 +274,6 @@ public class CarInfoActivity extends AppCompatActivity {
                 data.put("bf", bf);
                 data.put("user_id", id);
                 data.put("car_id", car_id);
-
                 return data;
             }
         };
@@ -347,9 +325,7 @@ public class CarInfoActivity extends AppCompatActivity {
     }
 
     public void deleteCar(){
-
         String URL = baseURL + "deleteCar.php";
-
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, response -> {
 
             if(response.trim().equals("success")){

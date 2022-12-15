@@ -1,5 +1,6 @@
 package com.mycar;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +24,7 @@ public class CarAdapter extends ArrayAdapter<Car> {
         this.mResource = resource;
     }
 
+    @SuppressLint("ViewHolder")
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -37,6 +39,5 @@ public class CarAdapter extends ArrayAdapter<Car> {
         plate.setText(getItem(position).getPlate());
 
         return convertView;
-
     }
 }

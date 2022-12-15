@@ -11,11 +11,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -76,7 +73,6 @@ public class SignUpActivity extends AppCompatActivity {
                     }
 
                 }catch (NumberFormatException e){
-
                     if(response.trim().equals("exists")){
                         Toast.makeText(SignUpActivity.this, "This email is already registered", Toast.LENGTH_SHORT).show();
                     }
@@ -99,10 +95,8 @@ public class SignUpActivity extends AppCompatActivity {
             };
             RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
             requestQueue.add(stringRequest);
-
         }else{
             Toast.makeText(this, "Fields cannot be empty", Toast.LENGTH_SHORT).show();
         }
-
     }
 }
