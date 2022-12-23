@@ -10,7 +10,6 @@ Mobile application that keeps track of your vehicle(s) fluids.
      When a new distance is driven, users will have to enter it in miles, and the application will update the remaining amount of fluids accordingly. 
 
 # App Preview :iphone:
-![image](https://user-images.githubusercontent.com/102875229/209320366-36f845dc-cfb0-4b96-9934-f8c82f5897f2.png)
 ![image](https://user-images.githubusercontent.com/102875229/207973611-6b4a781b-8281-4a89-a8a4-4b10187872cc.png)
 ![image](https://user-images.githubusercontent.com/102875229/207970566-a17d6dd4-701b-4c78-9a4e-a4b9fa1efadf.png)
 ![image](https://user-images.githubusercontent.com/102875229/207970716-ebabf441-9f2f-49df-ac4c-c29fd1b70cfc.png)
