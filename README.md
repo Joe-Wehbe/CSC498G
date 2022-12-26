@@ -44,32 +44,27 @@ https://www.apachefriends.org/download.html
 #### Download the files in my repository
 > Click on: 'Code', then 'Download ZIP'.
 
-<br /> 
 
 ## Set up the Project
 #### Import the project to Android Studio
-> From android studio home, click on 'Open', locate and choose 'MyCar' folder, then click 'OK'\
-> If you have a project running click on 'File', 'New', 'Import Project...', locate and choose MyCar, then click 'OK'
-
-<br /> 
+> From android studio home, click on 'Open', locate and choose 'MyCar' folder, then click 'OK'.\
+> If you have a project running click on 'File', 'New', 'Import Project...', locate and choose MyCar, then click 'OK'.
+ 
 
 #### Change the IPv4 Address
 > Open the command prompt and type: ipconfig
 > Copy the IPv4 Address and replace the old one with it in every activity where a URL is used.
 
-<br /> 
 
 #### Move the files of the 'Backend' folder to htdocs
 > Go to XAMPP/htdocs on your device, create a new folder name it MyCar, and move into it the files under the downloaded 'Backend' folder.
 
-<br /> 
 
 #### Run XAMPP server
-> Start Apache\
-> Start MySQL\
+> Start Apache.\
+> Start MySQL.\
 > Click on MySQL Admin, which will open phpMyAdmin.
 
-<br /> 
 
 #### Create the database
 > Click on 'New' in phpMyAdmin, and create a database, name it 'mycardb'\
