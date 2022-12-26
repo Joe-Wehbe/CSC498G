@@ -45,6 +45,7 @@ Download the Files in my Repository
 > Click on: 'Code', then 'Download ZIP'.
 
 <br /> 
+<br /> 
 
 ## Set up the Project
 Import the project to Android Studio
