@@ -45,23 +45,22 @@ Download the Files in my Repository
 > Click on: 'Code', then 'Download ZIP'.
 
 <br /> 
-<br /> 
 
 ## Set up the Project
 Import the project to Android Studio
 > From android studio home, click on 'Open', locate and choose 'MyCar' folder, then click 'OK'
 > If you have a project running click on 'File', 'New', 'Import Project...', locate and choose MyCar, then click 'OK'
-
+<br /> 
 Change the IPv4 Address
 > Open the command prompt and type:
 ```
 ipconfig
 ```
 > Copy the IPv4 Address and replace the old one with it in every activity where a URL is used.
-
+<br /> 
 Move the files of the 'Backend' folder to htdocs
 > Go to XAMPP/htdocs on your device, create a new folder name it MyCar, and move into it the files under the downloaded 'Backend' folder.
-
+<br /> 
 Run XAMPP server
 > Start Apache
 > Start MySQL
