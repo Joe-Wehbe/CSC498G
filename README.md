@@ -39,3 +39,6 @@ Download XAMPP
 ```
 https://www.apachefriends.org/download.html
 ```
+
+Download the files in my repository
+> Click on Code, Download ZIP.
