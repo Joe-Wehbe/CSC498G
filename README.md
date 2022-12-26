@@ -29,7 +29,7 @@ You can download the database from the repository under the 'Database' folder.
 ![image](https://user-images.githubusercontent.com/102875229/207974550-3ca3fe1e-488d-41bf-b088-71dfc135a4a0.png)
 
 
-# How to Run the Application
+# How to Run the Application :settings:
 ## What to Download
 ### Download Android Studio
 ```
