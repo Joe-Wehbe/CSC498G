@@ -31,7 +31,7 @@ You can download the database from the repository under the 'Database' folder.
 
 # How to Run the Application
 ## What to Download
-###cDownload Android Studio
+### Download Android Studio
 ```
 https://developer.android.com/studio
 ```
