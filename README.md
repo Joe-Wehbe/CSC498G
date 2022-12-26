@@ -44,7 +44,9 @@ https://www.apachefriends.org/download.html
 Download the Files in my Repository
 > Click on: 'Code', then 'Download ZIP'.
 
-
+\
+\
+\
 
 ## Set up the Project
 Import the project to Android Studio
@@ -52,7 +54,7 @@ Import the project to Android Studio
 > If you have a project running click on 'File', 'New', 'Import Project...', locate and choose MyCar, then click 'OK'
 
 Change the IPv4 Address
-> Open the command prompt and type
+> Open the command prompt and type:
 ```
 ipconfig
 ```
