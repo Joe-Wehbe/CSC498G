@@ -16,11 +16,6 @@ First, a signin page will be shown where users can enter their email and passwor
 ![image](https://user-images.githubusercontent.com/102875229/209529553-41608ad4-64b7-4c9c-a4ce-f78df25aad81.png)
 ![image](https://user-images.githubusercontent.com/102875229/209529803-0ff8b60f-c61f-4fc8-b19c-ce49ccfb57e3.png)
 
-# How to Run the Application
-```
-Download android studio
-```
-
 # Stacks :books:
 <img src="https://img.shields.io/badge/-PHP-232531?logo=php&logoColor=white&style=for-the-badge" ></img>
 <img src="https://img.shields.io/badge/-java-5382a1?logo=&logoColor=white&style=for-the-badge" ></img>
@@ -34,3 +29,13 @@ You can download the database from the repository under the 'Database' folder.
 ![image](https://user-images.githubusercontent.com/102875229/207974550-3ca3fe1e-488d-41bf-b088-71dfc135a4a0.png)
 
 
+# How to Run the Application
+Download Android Studio
+```
+https://developer.android.com/studio?gclid=CjwKCAiAqaWdBhAvEiwAGAQltmXrDwYTjfRZkH10M4BXWAg0Zmi8jDNEjz0d6J9hP3U1kf7SzpAXBxoC60kQAvD_BwE&gclsrc=aw.ds
+```
+
+Download XAMPP
+```
+https://www.apachefriends.org/download.html
+```
