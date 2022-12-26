@@ -14,8 +14,7 @@ First, a signin page will be shown where users can enter their email and passwor
 ![image](https://user-images.githubusercontent.com/102875229/209528293-a92cac30-8c58-4eb8-8cea-278d7586f88a.png)
 ![image](https://user-images.githubusercontent.com/102875229/209528429-61e3de0f-7cd4-450a-a540-e2d04d0d7036.png)
 ![image](https://user-images.githubusercontent.com/102875229/209529553-41608ad4-64b7-4c9c-a4ce-f78df25aad81.png)
-![image](https://user-images.githubusercontent.com/102875229/207971636-fb2cccd9-d297-455c-b9b3-e95b5745ce41.png)
-![image](https://user-images.githubusercontent.com/102875229/207971824-1eed82ee-0083-422b-b9da-a2feb5c459ef.png)
+![image](https://user-images.githubusercontent.com/102875229/209529803-0ff8b60f-c61f-4fc8-b19c-ce49ccfb57e3.png)
 
 # How to Run the Application
 ```
