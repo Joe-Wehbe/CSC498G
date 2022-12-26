@@ -10,9 +10,9 @@ First, a signin page will be shown where users can enter their email and passwor
       
 # App Preview :iphone:
 ![image](https://user-images.githubusercontent.com/102875229/209527996-954449ea-fe45-4767-b18c-b4d701f41934.png)
-![image](https://user-images.githubusercontent.com/102875229/207970566-a17d6dd4-701b-4c78-9a4e-a4b9fa1efadf.png)
-![image](https://user-images.githubusercontent.com/102875229/207970716-ebabf441-9f2f-49df-ac4c-c29fd1b70cfc.png)
-![image](https://user-images.githubusercontent.com/102875229/207970933-d3f625cd-6763-43d3-8ac7-0df79fecb6f0.png)
+![image](https://user-images.githubusercontent.com/102875229/209528172-37eff633-8d7f-4d72-a504-639a7d06311a.png)
+![image](https://user-images.githubusercontent.com/102875229/209528293-a92cac30-8c58-4eb8-8cea-278d7586f88a.png)
+![image](https://user-images.githubusercontent.com/102875229/209528429-61e3de0f-7cd4-450a-a540-e2d04d0d7036.png)
 ![image](https://user-images.githubusercontent.com/102875229/207971364-aaf240f2-0242-464a-ae72-ac6fc727a287.png)
 ![image](https://user-images.githubusercontent.com/102875229/207971512-cfd824ec-9f5e-427c-a9a3-c145c5172eef.png)
 ![image](https://user-images.githubusercontent.com/102875229/207971636-fb2cccd9-d297-455c-b9b3-e95b5745ce41.png)
