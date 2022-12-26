@@ -68,8 +68,8 @@ https://www.apachefriends.org/download.html
 
 
 #### Create the database
-> Click on 'New' in phpMyAdmin, and create a database, name it 'mycardb'\
-> Copy the content of mycardb.sql which is under the 'Database' folder\
+> Click on 'New' in phpMyAdmin, and create a database, name it 'mycardb'.\
+> Copy the content of mycardb.sql which is under the 'Database' folder.\
 > Paste it under the SQL section in phpMyAdmin and click GO.
 
 <br />
