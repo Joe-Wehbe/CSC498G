@@ -31,17 +31,17 @@ You can download the database from the repository under the 'Database' folder.
 
 # How to Run the Application
 ## What to Download
-Download Android Studio
+###cDownload Android Studio
 ```
 https://developer.android.com/studio
 ```
 
-Download XAMPP
+### Download XAMPP
 ```
 https://www.apachefriends.org/download.html
 ```
 
-Download the files in my repository
+### Download the files in my repository
 > Click on: 'Code', then 'Download ZIP'.
 
 <br /> 
