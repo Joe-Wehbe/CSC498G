@@ -40,13 +40,12 @@ https://developer.android.com/studio
 ```
 https://www.apachefriends.org/download.html
 ```
-
-#### Download the files in my repository
-> Click on: 'Code', then 'Download ZIP'.
-
 <br />
 
 ## Set up the Project
+#### Download the files in my repository
+> Click on: 'Code', then 'Download ZIP'.
+
 #### Import the project to Android Studio
 > From android studio home, click on 'Open', locate and choose 'MyCar' folder, then click 'OK'.\
 > If you have a project running click on 'File', 'New', 'Import Project...', locate and choose MyCar, then click 'OK'.
