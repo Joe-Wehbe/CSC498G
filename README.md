@@ -73,4 +73,4 @@ https://www.apachefriends.org/download.html
 > Paste it under the SQL section in phpMyAdmin and click GO.
 
 <br />
-You're all done!
+You're all done! :slightly_smiling_face:	
