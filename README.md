@@ -41,7 +41,7 @@ Download XAMPP
 https://www.apachefriends.org/download.html
 ```
 
-Download the Files in my Repository
+Download the files in my repository
 > Click on: 'Code', then 'Download ZIP'.
 
 <br /> 
@@ -72,11 +72,12 @@ Run XAMPP server
 > Start MySQL
 > Click on MySQL Admin, which will open phpMyAdmin.
 
+<br /> 
 
+Create the database
+> Click on 'New' in phpMyAdmin, and create a database, name it 'mycardb'
+> Copy the content of mycardb.sql which is under the 'Database' folder
+> Paste it under the SQL section in phpMyAdmin and click GO.
 
-
-
-
-
-
-
+<br />
+You're all done!
