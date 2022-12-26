@@ -46,7 +46,6 @@ Download the Files in my Repository
 
 \
 \
-\
 
 ## Set up the Project
 Import the project to Android Studio
