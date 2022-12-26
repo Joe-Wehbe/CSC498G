@@ -9,7 +9,7 @@ Mobile application that keeps track of your vehicle(s) fluids.
 First, a signin page will be shown where users can enter their email and password to access the application directly. In case they do not have an account, they will be asked to enter their first name, last name, country, email, and password. All this information will be stored in MySQL database (table users) and you can access it using phpMyAdmin under the 'Database' folder in the repository. Once complete, a list of the user's vehicles will be displayed (if they have any), and they can check each vehicle's current amount of fluids remaining. Users have the option to delete vehicles, or add new vehicles, they will be asked to enter the: brand, model, color, plate. This information will be stored in the table 'cars' of the database. When a new distance is driven, users will have to enter it in miles, and the application will update the remaining amount of fluids accordingly.
       
 # App Preview :iphone:
-![image](https://user-images.githubusercontent.com/102875229/209527785-7d542bd9-7ce2-4c3f-9186-63e8a6c1533f.png)
+![image](https://user-images.githubusercontent.com/102875229/209527996-954449ea-fe45-4767-b18c-b4d701f41934.png)
 ![image](https://user-images.githubusercontent.com/102875229/207970566-a17d6dd4-701b-4c78-9a4e-a4b9fa1efadf.png)
 ![image](https://user-images.githubusercontent.com/102875229/207970716-ebabf441-9f2f-49df-ac4c-c29fd1b70cfc.png)
 ![image](https://user-images.githubusercontent.com/102875229/207970933-d3f625cd-6763-43d3-8ac7-0df79fecb6f0.png)
