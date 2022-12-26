@@ -47,7 +47,7 @@ Download the files in my repository
 <br /> 
 
 ## Set up the Project
-###Import the project to Android Studio
+### Import the project to Android Studio
 > From android studio home, click on 'Open', locate and choose 'MyCar' folder, then click 'OK'\
 > If you have a project running click on 'File', 'New', 'Import Project...', locate and choose MyCar, then click 'OK'
 
