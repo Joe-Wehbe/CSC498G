@@ -43,7 +43,8 @@ https://www.apachefriends.org/download.html
 
 Download the Files in my Repository
 > Click on: 'Code', then 'Download ZIP'.
-\
+
+
 
 ## Set up the Project
 Import the project to Android Studio
