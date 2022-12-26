@@ -29,31 +29,31 @@ You can download the database from the repository under the 'Database' folder.
 ![image](https://user-images.githubusercontent.com/102875229/207974550-3ca3fe1e-488d-41bf-b088-71dfc135a4a0.png)
 
 
-# How to Run the Application :settings:
+# How to Run the Application :gear:
 ## What to Download
-### Download Android Studio
+#### Download Android Studio
 ```
 https://developer.android.com/studio
 ```
 
-### Download XAMPP
+#### Download XAMPP
 ```
 https://www.apachefriends.org/download.html
 ```
 
-### Download the files in my repository
+#### Download the files in my repository
 > Click on: 'Code', then 'Download ZIP'.
 
 <br /> 
 
 ## Set up the Project
-### Import the project to Android Studio
+#### Import the project to Android Studio
 > From android studio home, click on 'Open', locate and choose 'MyCar' folder, then click 'OK'\
 > If you have a project running click on 'File', 'New', 'Import Project...', locate and choose MyCar, then click 'OK'
 
 <br /> 
 
-### Change the IPv4 Address
+#### Change the IPv4 Address
 > Open the command prompt and type:
 ```
 ipconfig
@@ -62,19 +62,19 @@ ipconfig
 
 <br /> 
 
-### Move the files of the 'Backend' folder to htdocs
+#### Move the files of the 'Backend' folder to htdocs
 > Go to XAMPP/htdocs on your device, create a new folder name it MyCar, and move into it the files under the downloaded 'Backend' folder.
 
 <br /> 
 
-### Run XAMPP server
+#### Run XAMPP server
 > Start Apache\
 > Start MySQL\
 > Click on MySQL Admin, which will open phpMyAdmin.
 
 <br /> 
 
-### Create the database
+#### Create the database
 > Click on 'New' in phpMyAdmin, and create a database, name it 'mycardb'\
 > Copy the content of mycardb.sql which is under the 'Database' folder\
 > Paste it under the SQL section in phpMyAdmin and click GO.
