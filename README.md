@@ -43,8 +43,9 @@ https://www.apachefriends.org/download.html
 
 Download the Files in my Repository
 > Click on: 'Code', then 'Download ZIP'.
-    
-    
+
+<br /> 
+
 ## Set up the Project
 Import the project to Android Studio
 > From android studio home, click on 'Open', locate and choose 'MyCar' folder, then click 'OK'
