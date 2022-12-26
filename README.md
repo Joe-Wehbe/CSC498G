@@ -32,7 +32,7 @@ You can download the database from the repository under the 'Database' folder.
 # How to Run the Application
 Download Android Studio
 ```
-https://developer.android.com/studio?gclid=CjwKCAiAqaWdBhAvEiwAGAQltmXrDwYTjfRZkH10M4BXWAg0Zmi8jDNEjz0d6J9hP3U1kf7SzpAXBxoC60kQAvD_BwE&gclsrc=aw.ds
+https://developer.android.com/
 ```
 
 Download XAMPP
