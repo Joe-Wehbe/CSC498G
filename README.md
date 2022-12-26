@@ -22,9 +22,6 @@ First, a signin page will be shown where users can enter their email and passwor
 <img src="https://img.shields.io/badge/-MYSQL-00758f?logo=mysql&logoColor=white&style=for-the-badge" ></img>
 <img src="https://img.shields.io/badge/-ANDROID%20STUDIO-3DDC84?logo=android-studio&logoColor=white&style=for-the-badge" ></img>
 
-# Database :bar_chart:
-You can download the database from the repository under the 'Database' folder.
-
 # ER Diagram :link:
 ![image](https://user-images.githubusercontent.com/102875229/207974550-3ca3fe1e-488d-41bf-b088-71dfc135a4a0.png)
 
@@ -43,7 +40,7 @@ https://www.apachefriends.org/download.html
 <br />
 
 ## Set up the Project
-#### Download the files in my repository
+#### Download all files from the repository
 > Click on: 'Code', then 'Download ZIP'.
 
 #### Import the project to Android Studio
