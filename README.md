@@ -80,4 +80,4 @@ Create the database
 > Paste it under the SQL section in phpMyAdmin and click GO.
 
 <br />
-## You're all done!
+You're all done!
