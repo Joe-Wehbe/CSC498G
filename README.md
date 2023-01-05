@@ -34,7 +34,6 @@ First, a signin page will be shown where users can enter their email and passwor
 ```
 https://developer.android.com/studio
 ```
-
 #### Download XAMPP
 ```
 https://www.apachefriends.org/download.html
