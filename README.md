@@ -50,7 +50,7 @@ https://www.apachefriends.org/download.html
  
 
 #### Change the IPv4 Address
-> Open the <kbd command> prompt and type: ipconfig
+> Open the command prompt and type: ipconfig
 > Copy the IPv4 Address and replace the old one with it in every activity where a URL is used.
 
 
