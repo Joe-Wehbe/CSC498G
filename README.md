@@ -16,7 +16,6 @@ First, a signin page will be shown where users can enter their email and passwor
 ![image](https://user-images.githubusercontent.com/102875229/209581627-73a9e2b5-9c24-4fcd-afc2-a0b68787ace5.png)
 ![image](https://user-images.githubusercontent.com/102875229/209581682-3e6bf934-b98d-498e-82c1-a3eece643342.png)
 ![image](https://user-images.githubusercontent.com/102875229/209581737-10d3734a-dae6-4cdf-9b75-15b269a687f7.png)
-![image](https://user-images.githubusercontent.com/102875229/209582001-d2fff2d9-4121-410c-a3fa-c58644c94de7.png)
 
 # Stacks :books:
 <img src="https://img.shields.io/badge/-PHP-232531?logo=php&logoColor=white&style=for-the-badge" ></img>
