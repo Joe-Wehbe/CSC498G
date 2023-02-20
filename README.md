@@ -1,5 +1,5 @@
 # MyCar :car:
-Mobile application that keeps track of your vehicle(s) fluids. (Mobile Development Course - Final Project)
+Mobile application that keeps track of your vehicle(s) fluids. This is the final project of the Mobile Development course (CSC498G) 
 
 # Contributors :raising_hand_man:
 <a href="https://github.com/Joe-Wehbe">Joe Wehbe</a>
