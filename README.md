@@ -12,7 +12,6 @@ First, a signin page will be shown where users can enter their email and passwor
 ![image](https://user-images.githubusercontent.com/102875229/209582117-72520fc4-858d-42a0-aa90-112f6640bd18.png)
 ![image](https://user-images.githubusercontent.com/102875229/209581550-7c6e3d9f-d9e9-4dad-bb2a-2a0c1a24ee44.png)
 ![image](https://user-images.githubusercontent.com/102875229/209581581-87330a63-e445-4042-b879-add7470a0805.png)
-![image](https://user-images.githubusercontent.com/102875229/209581911-a6a3d459-a39d-49c1-91cd-530dbf2d9f20.png)
 ![image](https://user-images.githubusercontent.com/102875229/209581627-73a9e2b5-9c24-4fcd-afc2-a0b68787ace5.png)
 ![image](https://user-images.githubusercontent.com/102875229/209581682-3e6bf934-b98d-498e-82c1-a3eece643342.png)
 ![image](https://user-images.githubusercontent.com/102875229/209581737-10d3734a-dae6-4cdf-9b75-15b269a687f7.png)
