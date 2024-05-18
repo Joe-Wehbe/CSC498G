@@ -2,7 +2,7 @@
 Mobile application that keeps track of your vehicle(s) fluids. This is the final project of the Mobile Development course (CSC498G) 
 
 # Contributors 🤝
-<a href="https://github.com/Joe-Wehbe">Joe Wehbe</a>
+<a href="https://github.com/joe-wehbe">Joe Wehbe</a>
 
 # Project Description :page_with_curl: 
 
